@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:UtilityKit/UtilityKit.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:DomainKit/DomainKit.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:DataKit/DataKit.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:PresentationKit/PresentationKit.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:SecureNotes/SecureNotes.xcodeproj">
+   </FileRef>
+</Workspace>
