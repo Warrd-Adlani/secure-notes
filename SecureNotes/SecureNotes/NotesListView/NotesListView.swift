@@ -6,34 +6,47 @@
 //
 
 import SwiftUI
+import DomainKit
 
 struct NotesListView<ViewModel: NotesListViewModelProtocol>: NotesListViewProtocol {
-    private var viewModel: ViewModel
+    @ObservedObject private var viewModel: ViewModel
     
     init(viewModel: ViewModel) {
         self.viewModel = viewModel
     }
     
     var body: some View {
-        VStack {
-            NavigationStack {
-                List(0...10, id: \.self) { _ in
-                    Text("Notes view")
-                        .onTapGesture {
-                            self.viewModel.fetchNotes()
+        NavigationStack {
+            VStack {
+                List {
+                    ForEach(viewModel.notes) { note in
+                        NavigationLink(value: note) {
+                            NoteListViewCell(title: note.title ?? "", timestamp: note.timestamp ?? Date())
                         }
-                }
-                Button {
-                    viewModel.fetchNotes()
-                } label: {
-                    Text("Load notes")
+                    }
+                    .onDelete(perform: { indexSet in
+                        indexSet.map { viewModel.notes[$0] }.forEach { note in
+                            viewModel.deleteNote(note)
+                        }
+                    })
                 }
             }
+            .padding(.top, 10)
+            .navigationTitle("Your notes")
+            .toolbar(content: {
+                Button {
+                    // TODO
+                } label: {
+                    Text("New note")
+                }
+            })
         }
-        .navigationTitle(Text("Notes"))
+        .onAppear(perform: {
+            viewModel.fetchNotes()
+        })
     }
 }
 
 #Preview {
-    NotesListView(viewModel: NotesListViewModel())
+    NotesListView(viewModel: NotesListViewModel.mock)
 }

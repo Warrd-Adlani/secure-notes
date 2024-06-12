@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import DataKit
 
 struct NoteView<ViewModel: NoteViewModelProtocol>: NoteViewProtocol {
     
@@ -39,5 +38,5 @@ struct NoteView<ViewModel: NoteViewModelProtocol>: NoteViewProtocol {
 }
 
 #Preview {
-    NoteView(viewModel: NoteViewModel(dataService: DataService(storageTech: .coreData)))
+    NoteView(viewModel: NoteViewModel.mock)
 }

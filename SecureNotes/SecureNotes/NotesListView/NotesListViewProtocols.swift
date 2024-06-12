@@ -7,10 +7,13 @@
 
 import Foundation
 import SwiftUI
+import DataKit
 
 public protocol NotesListViewModelProtocol: ObservableObject {
+    var notes: [Note] { get set }
+    
     func fetchNotes()
-    func saveNote()
+    func deleteNote(_ note: Note)
 }
 
 public protocol NotesListViewProtocol: View {}

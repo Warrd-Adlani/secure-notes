@@ -1,11 +1,14 @@
 import Foundation
 import CoreData
+import Combine
 import DomainKit
+import UtilityKit
 
 internal final class CoreDataService: StoreService {
     static var shared = CoreDataService() // Prevents multiple creations of the store
+    private let modelName = "SecureNotes"
+
     private lazy var container: NSPersistentContainer = {
-        let modelName = "SecureNotes"
         guard let modelURL = Bundle(for: type(of: self)).url(forResource: modelName, withExtension: "momd") else {
             fatalError("Error loading model from bundle")
         }
@@ -39,37 +42,46 @@ internal final class CoreDataService: StoreService {
         }
     }
     
-    func saveNote(with title: String, and content: String) {
-        let note = Note(context: managedObjectContext)
-        note.id = UUID()
-        note.title = title
-        note.content = content
-        note.timestamp = Date()
-        
-        do {
-            try managedObjectContext.save()
-            print("Saved successfully")
-        } catch {
-            print("Failed to save note: \(error)")
-        }
-    }
-    
-    func removeNote(with id: UUID) {
-        let fetchRequest: NSFetchRequest<Note> = Note.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
-        
-        do {
-            let notes = try managedObjectContext.fetch(fetchRequest)
-            for note in notes {
-                managedObjectContext.delete(note)
+    func saveNote(with title: String, and content: String) -> Future<Bool, Error> {
+        return Future { [self] promise in
+            let note = Note(context: managedObjectContext)
+            note.id = UUID()
+            note.title = title
+            note.content = content
+            note.timestamp = Date()
+            
+            do {
+                try managedObjectContext.save()
+                log("Saved successfully")
+                promise(.success(true))
+            } catch {
+                log("Failed to save note: \(error)")
+                promise(.failure(error))
             }
-            try managedObjectContext.save()
-            print("Removed successfully")
-        } catch {
-            print("Failed to remove note: \(error)")
         }
     }
     
+    func removeNote(with id: UUID) -> Future<Bool, any Error> {
+        return Future { [self] promise in
+            let fetchRequest: NSFetchRequest<Note> = Note.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+            
+            do {
+                let notes = try managedObjectContext.fetch(fetchRequest)
+                for note in notes {
+                    managedObjectContext.delete(note)
+                }
+                try managedObjectContext.save()
+                log("Removed successfully")
+                promise(.success(true))
+            } catch {
+                log("Failed to remove note: \(error)")
+                promise(.failure(error))
+            }
+        }
+    }
+    
+
     func fetchNote(with id: UUID) -> Note? {
         let fetchRequest: NSFetchRequest<Note> = Note.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
@@ -83,35 +95,35 @@ internal final class CoreDataService: StoreService {
         }
     }
     
-    func updateNote(with id: UUID, title: String, and content: String) {
-        if let note = fetchNote(with: id) {
-            note.title = title
-            note.content = content
-            note.timestamp = Date()
-            
-            do {
-                try managedObjectContext.save()
-                print("Updated successfully")
-            } catch {
-                print("Failed to update note: \(error)")
+    func updateNote(with id: UUID, title: String, and content: String) -> Future<Bool, any Error> {
+        return Future { [self] promise in
+            if let note = fetchNote(with: id) {
+                note.title = title
+                note.content = content
+                note.timestamp = Date()
+                
+                do {
+                    try managedObjectContext.save()
+                    log("Updated successfully")
+                } catch {
+                    log("Failed to update note: \(error)")
+                    promise(.failure(error))
+                }
             }
         }
     }
     
-    func fetchAllNotes() {
-        let fetchRequest: NSFetchRequest<Note> = Note.fetchRequest()
-        
-        do {
-//            return try managedObjectContext.fetch(fetchRequest)
-            let notes = try managedObjectContext.fetch(fetchRequest)
-            print(notes)
-            for note in notes {
-                print(note.title)
+    func fetchAllNotes() -> Future<[Note], Error> {
+        return Future { [self] promise in
+            let fetchRequest: NSFetchRequest<Note> = Note.fetchRequest()
+            let subject = PassthroughSubject<[Note], Never>()
+            do {
+                let notes = try managedObjectContext.fetch(fetchRequest)
+                promise(.success(notes))
+            } catch {
+                log("Failed to fetch notes: \(error)")
+                promise(.failure(error))
             }
-
-        } catch {
-            print("Failed to fetch notes: \(error)")
-//            return []
         }
     }
 }

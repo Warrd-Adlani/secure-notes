@@ -33,6 +33,7 @@
 		F3F1BE5C2C19045C00381E03 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BE5B2C19045C00381E03 /* AppState.swift */; };
 		F3F1BE9B2C19DB4100381E03 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BE9A2C19DB4100381E03 /* SplashScreenView.swift */; };
 		F3F1BEB32C19E4C500381E03 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BEB22C19E4C500381E03 /* SignInView.swift */; };
+		F3F1BF0A2C1A3E0C00381E03 /* NoteListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BF092C1A3E0C00381E03 /* NoteListViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		F3F1BE5B2C19045C00381E03 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		F3F1BE9A2C19DB4100381E03 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		F3F1BEB22C19E4C500381E03 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		F3F1BF092C1A3E0C00381E03 /* NoteListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,8 +207,9 @@
 			isa = PBXGroup;
 			children = (
 				F3F1BE4D2C19036D00381E03 /* NotesListViewProtocols.swift */,
-				F3F1BE4E2C19036D00381E03 /* NotesListView.swift */,
 				F3F1BE4F2C19036D00381E03 /* NotesListViewModel.swift */,
+				F3F1BE4E2C19036D00381E03 /* NotesListView.swift */,
+				F3F1BF092C1A3E0C00381E03 /* NoteListViewCell.swift */,
 			);
 			path = NotesListView;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 			files = (
 				F3F1BD732C19022800381E03 /* ContentView.swift in Sources */,
 				F3F1BD712C19022800381E03 /* SecureNotesApp.swift in Sources */,
+				F3F1BF0A2C1A3E0C00381E03 /* NoteListViewCell.swift in Sources */,
 				F3F1BE522C19036D00381E03 /* NotesListViewModel.swift in Sources */,
 				F3F1BE9B2C19DB4100381E03 /* SplashScreenView.swift in Sources */,
 				F3F1BE582C19039100381E03 /* NoteViewModel.swift in Sources */,

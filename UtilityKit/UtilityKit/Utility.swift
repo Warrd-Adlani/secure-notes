@@ -7,18 +7,13 @@
 
 import Foundation
 
-public final class Utility {
-    public static var shared = Utility()
-    public let isRunningUITests = ProcessInfo.processInfo.arguments.contains("isRunningUITests")
-    public var isDebug: Bool {
-        #if DEBUG
-        print("Debugging enabled")
-        return true
-        #else
-        print("Debugging disabled")
-        return false
-        #endif
-    }
-    
-    private init() {}
+public let isRunningUITests = ProcessInfo.processInfo.arguments.contains("isRunningUITests")
+public var isDebug: Bool {
+    #if DEBUG
+    print("Debugging enabled")
+    return true
+    #else
+    print("Debugging disabled")
+    return false
+    #endif
 }

@@ -18,8 +18,16 @@ class NoteViewModel: NoteViewModelProtocol {
         self.dataService = dataService
     }
     
-    func saveNote(with title: String, and body: String) {}
+    func saveNote(with title: String, and body: String) {
+        dataService.saveNote(with: "Title ABC", and: "Some random content")
+    }
     func updateNote(for id: String) {}
     func removeNote(for id: String) {}
     func readNote(for id: String) {}
+}
+
+extension NoteViewModel {
+    static var mock: NoteViewModel {
+        return Self(dataService: DataService(storageTech: .coreData))
+    }
 }
