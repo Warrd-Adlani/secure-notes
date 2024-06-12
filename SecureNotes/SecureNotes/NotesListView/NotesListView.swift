@@ -23,6 +23,11 @@ struct NotesListView<ViewModel: NotesListViewModelProtocol>: NotesListViewProtoc
                             self.viewModel.fetchNotes()
                         }
                 }
+                Button {
+                    viewModel.fetchNotes()
+                } label: {
+                    Text("Load notes")
+                }
             }
         }
         .navigationTitle(Text("Notes"))

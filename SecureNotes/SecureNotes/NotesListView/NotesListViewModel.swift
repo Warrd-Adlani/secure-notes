@@ -15,7 +15,10 @@ class NotesListViewModel: NotesListViewModelProtocol {
     
     func fetchNotes() {
         // TODO
-        print("fetching")
+        dataService.fetchAllNotes()
+    }
+    
+    func saveNote() {
         dataService.saveNote(with: "Title ABC", and: "Some random content")
     }
 }

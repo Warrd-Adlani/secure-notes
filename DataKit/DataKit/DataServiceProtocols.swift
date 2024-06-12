@@ -10,9 +10,9 @@ import Foundation
 public protocol StoreService {
     func saveNote(with title: String, and content: String)
     func removeNote(with id: UUID)
-    func updateNote(with id: UUID)
-    func readNote(with id: UUID)
-    func fetchNotes()
+    func fetchNote(with id: UUID) -> Note?
+    func updateNote(with id: UUID, title: String, and content: String)
+    func fetchAllNotes()
 }
 
 public protocol DataServiceProtocol: StoreService {

@@ -1,40 +1,41 @@
-//
-//  CoreDataService.swift
-//  DataKit
-//
-//  Created by Warrd Adlani on 12/06/2024.
-//
-
-import CoreData
 import Foundation
-import UtilityKit
+import CoreData
 import DomainKit
 
 internal final class CoreDataService: StoreService {
+    static var shared = CoreDataService() // Prevents multiple creations of the store
     private lazy var container: NSPersistentContainer = {
         let modelName = "SecureNotes"
-        guard let modelURL = Bundle(for: type(of: self)).url(forResource: modelName, withExtension:"momd") else {
-                fatalError("Error loading model from bundle")
+        guard let modelURL = Bundle(for: type(of: self)).url(forResource: modelName, withExtension: "momd") else {
+            fatalError("Error loading model from bundle")
         }
 
         guard let mom = NSManagedObjectModel(contentsOf: modelURL) else {
             fatalError("Error initializing mom from: \(modelURL)")
         }
-        return NSPersistentContainer(name: modelName, managedObjectModel: mom)
+        let container = NSPersistentContainer(name: modelName, managedObjectModel: mom)
+        container.loadPersistentStores { description, error in
+            if let error = error as NSError? {
+                fatalError("Core Data failed to load: \(error.localizedDescription)")
+            }
+        }
+        return container
     }()
     
     private var managedObjectContext: NSManagedObjectContext {
         return container.viewContext
     }
     
-    init() { loadPersistantStores() }
+    private init() {
+        loadPersistentStores()
+    }
     
-    func loadPersistantStores() {
+    private func loadPersistentStores() {
         container.loadPersistentStores { description, error in
             if let error = error as NSError? {
                 print("Core Data failed to load: \(error.localizedDescription)")
             }
-            print("loadPersistantStores loaded")
+            print("loadPersistentStores loaded")
         }
     }
     
@@ -44,27 +45,73 @@ internal final class CoreDataService: StoreService {
         note.title = title
         note.content = content
         note.timestamp = Date()
+        
         do {
             try managedObjectContext.save()
-            print("saved")
+            print("Saved successfully")
         } catch {
-            print(error)
+            print("Failed to save note: \(error)")
         }
     }
     
     func removeNote(with id: UUID) {
-    
+        let fetchRequest: NSFetchRequest<Note> = Note.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+        
+        do {
+            let notes = try managedObjectContext.fetch(fetchRequest)
+            for note in notes {
+                managedObjectContext.delete(note)
+            }
+            try managedObjectContext.save()
+            print("Removed successfully")
+        } catch {
+            print("Failed to remove note: \(error)")
+        }
     }
     
-    func readNote(with id: UUID) {
+    func fetchNote(with id: UUID) -> Note? {
+        let fetchRequest: NSFetchRequest<Note> = Note.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
         
+        do {
+            let notes = try managedObjectContext.fetch(fetchRequest)
+            return notes.first
+        } catch {
+            print("Failed to fetch note: \(error)")
+            return nil
+        }
     }
     
-    func updateNote(with id: UUID) {
-        
+    func updateNote(with id: UUID, title: String, and content: String) {
+        if let note = fetchNote(with: id) {
+            note.title = title
+            note.content = content
+            note.timestamp = Date()
+            
+            do {
+                try managedObjectContext.save()
+                print("Updated successfully")
+            } catch {
+                print("Failed to update note: \(error)")
+            }
+        }
     }
     
-    func fetchNotes() {
+    func fetchAllNotes() {
+        let fetchRequest: NSFetchRequest<Note> = Note.fetchRequest()
         
+        do {
+//            return try managedObjectContext.fetch(fetchRequest)
+            let notes = try managedObjectContext.fetch(fetchRequest)
+            print(notes)
+            for note in notes {
+                print(note.title)
+            }
+
+        } catch {
+            print("Failed to fetch notes: \(error)")
+//            return []
+        }
     }
 }
