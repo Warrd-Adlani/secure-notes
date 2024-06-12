@@ -42,10 +42,11 @@ internal final class CoreDataService: StoreService {
         }
     }
     
-    func saveNote(with title: String, and content: String) -> Future<Bool, Error> {
+    func saveNote(with title: String, and content: String) -> Future<Note, Error> {
         return Future { [self] promise in
             let note = Note(context: managedObjectContext)
-            note.id = UUID()
+            let id = UUID()
+            note.id = id
             note.title = title
             note.content = content
             note.timestamp = Date()
@@ -53,7 +54,7 @@ internal final class CoreDataService: StoreService {
             do {
                 try managedObjectContext.save()
                 log("Saved successfully")
-                promise(.success(true))
+                promise(.success(note))
             } catch {
                 log("Failed to save note: \(error)")
                 promise(.failure(error))

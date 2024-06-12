@@ -26,7 +26,7 @@ public final class DataService: DataServiceProtocol {
         }
     }
     
-    public func saveNote(with title: String, and content: String) -> Future<Bool, Error> {
+    public func saveNote(with title: String, and content: String) -> Future<Note, Error> {
         return storeService.saveNote(with: title, and: content)
     }
     

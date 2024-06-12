@@ -38,7 +38,7 @@ class NoteViewModel: NoteViewModelProtocol {
     }
     @Published var showAlert = false
     
-    private let note: Note?
+    private var note: Note?
     
     private let dataService: DataServiceProtocol
     private var cancellables = Set<AnyCancellable>()
@@ -70,7 +70,9 @@ class NoteViewModel: NoteViewModelProtocol {
                     self?.alert = .saved
                 case .failure(_):
                     break
-                }}, receiveValue: { _ in})
+                }}, receiveValue: { [self] note in
+                    self.note = note
+                })
             .store(in: &cancellables)
     }
     

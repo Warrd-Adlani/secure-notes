@@ -14,11 +14,9 @@ struct NotesListView<ViewModel: NotesListViewModelProtocol>: NotesListViewProtoc
     init(viewModel: ViewModel) {
         self.viewModel = viewModel
     }
-    
-    @State private var path: [String] = []
-    
+        
     var body: some View {
-        NavigationStack(path: $path) {
+        NavigationStack {
             VStack {
                 List {
                     ForEach(viewModel.notes) { note in
@@ -36,17 +34,14 @@ struct NotesListView<ViewModel: NotesListViewModelProtocol>: NotesListViewProtoc
             .padding(.top, 10)
             .navigationTitle("Your notes")
             .toolbar(content: {
-                Button {
-                    // TODO
+                NavigationLink {
+                    NoteView(viewModel: NoteViewModel(note: nil, dataService: DataService(storageTech: .coreData)))
                 } label: {
                     Text("New note")
                 }
             })
         }
-        .onAppear(perform: {
-            viewModel.fetchNotes()
-        })
-        .task {
+        .onAppear {
             viewModel.fetchNotes()
         }
     }
