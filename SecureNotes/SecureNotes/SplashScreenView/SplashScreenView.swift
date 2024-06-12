@@ -8,7 +8,9 @@
 import SwiftUI
 import PresentationKit
 
-struct SplashScreenView: View {
+protocol SplashScreenViewProtocol: View {}
+
+struct SplashScreenView: SplashScreenViewProtocol {
     var body: some View {
         ZStack {
             Color.black.ignoresSafeArea()

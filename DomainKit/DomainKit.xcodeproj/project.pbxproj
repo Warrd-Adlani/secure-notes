@@ -75,9 +75,9 @@
 		F3F1BDFA2C1902B500381E03 /* DomainKit */ = {
 			isa = PBXGroup;
 			children = (
+				F3F1BDFB2C1902B500381E03 /* DomainKit.h */,
 				F3F1BEAB2C19E0D500381E03 /* Note+CoreDataClass.swift */,
 				F3F1BEAC2C19E0D500381E03 /* Note+CoreDataProperties.swift */,
-				F3F1BDFB2C1902B500381E03 /* DomainKit.h */,
 				F3F1BDFC2C1902B500381E03 /* DomainKit.docc */,
 			);
 			path = DomainKit;

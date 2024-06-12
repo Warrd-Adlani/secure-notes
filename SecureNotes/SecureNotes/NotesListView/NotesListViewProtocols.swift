@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import SwiftUI
+
 public protocol NotesListViewModelProtocol: ObservableObject {}
 
-public protocol NotesListViewProtocol: ObservableObject {}
+public protocol NotesListViewProtocol: View {}

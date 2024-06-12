@@ -9,9 +9,7 @@ import Foundation
 
 public final class Utility {
     public static var shared = Utility()
-    
-    private init() {}
-    
+    public let isRunningUITests = ProcessInfo.processInfo.arguments.contains("isRunningUITests")
     public var isDebug: Bool {
         #if DEBUG
         print("Debugging enabled")
@@ -21,4 +19,6 @@ public final class Utility {
         return false
         #endif
     }
+    
+    private init() {}
 }

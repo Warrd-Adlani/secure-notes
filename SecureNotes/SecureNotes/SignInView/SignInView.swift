@@ -8,7 +8,9 @@
 import SwiftUI
 import PresentationKit
 
-struct SignInView: View {
+protocol SignInViewProtocol: View {}
+
+struct SignInView: SignInViewProtocol {
     @EnvironmentObject var appState: AppState
     
     var body: some View {

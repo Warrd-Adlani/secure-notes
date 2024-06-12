@@ -7,10 +7,17 @@
 
 import SwiftUI
 
-struct NotesListView: View {
+struct NotesListView: NotesListViewProtocol {
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            NavigationStack {
+                List(0...10, id: \.self) { _ in
+                    Text("Notes view")
+                }
+            }
+        }
+        .navigationTitle(Text("Notes"))
     }
 }
 
