@@ -8,6 +8,9 @@
       location = "group:DomainKit/DomainKit.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:ResourceKit/ResourceKit.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:DataKit/DataKit.xcodeproj">
    </FileRef>
    <FileRef

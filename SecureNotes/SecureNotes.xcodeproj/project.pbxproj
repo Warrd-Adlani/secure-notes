@@ -11,8 +11,6 @@
 		F3F1BD732C19022800381E03 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BD722C19022800381E03 /* ContentView.swift */; };
 		F3F1BD752C19022900381E03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3F1BD742C19022900381E03 /* Assets.xcassets */; };
 		F3F1BD782C19022900381E03 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3F1BD772C19022900381E03 /* Preview Assets.xcassets */; };
-		F3F1BD7A2C19022900381E03 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BD792C19022900381E03 /* Persistence.swift */; };
-		F3F1BD7D2C19022900381E03 /* SecureNotes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BD7B2C19022900381E03 /* SecureNotes.xcdatamodeld */; };
 		F3F1BD872C19022A00381E03 /* SecureNotesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BD862C19022A00381E03 /* SecureNotesTests.swift */; };
 		F3F1BD912C19022A00381E03 /* SecureNotesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BD902C19022A00381E03 /* SecureNotesUITests.swift */; };
 		F3F1BD932C19022A00381E03 /* SecureNotesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BD922C19022A00381E03 /* SecureNotesUITestsLaunchTests.swift */; };
@@ -34,6 +32,8 @@
 		F3F1BE582C19039100381E03 /* NotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BE552C19039100381E03 /* NotesViewModel.swift */; };
 		F3F1BE592C19039100381E03 /* NotesViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BE562C19039100381E03 /* NotesViewProtocols.swift */; };
 		F3F1BE5C2C19045C00381E03 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BE5B2C19045C00381E03 /* AppState.swift */; };
+		F3F1BE9B2C19DB4100381E03 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BE9A2C19DB4100381E03 /* SplashScreenView.swift */; };
+		F3F1BEB32C19E4C500381E03 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BEB22C19E4C500381E03 /* SignInView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,8 +77,6 @@
 		F3F1BD722C19022800381E03 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F3F1BD742C19022900381E03 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3F1BD772C19022900381E03 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		F3F1BD792C19022900381E03 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		F3F1BD7C2C19022900381E03 /* SecureNotes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SecureNotes.xcdatamodel; sourceTree = "<group>"; };
 		F3F1BD822C19022A00381E03 /* SecureNotesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SecureNotesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3F1BD862C19022A00381E03 /* SecureNotesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureNotesTests.swift; sourceTree = "<group>"; };
 		F3F1BD8C2C19022A00381E03 /* SecureNotesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SecureNotesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,6 +95,8 @@
 		F3F1BE552C19039100381E03 /* NotesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesViewModel.swift; sourceTree = "<group>"; };
 		F3F1BE562C19039100381E03 /* NotesViewProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesViewProtocols.swift; sourceTree = "<group>"; };
 		F3F1BE5B2C19045C00381E03 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		F3F1BE9A2C19DB4100381E03 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		F3F1BEB22C19E4C500381E03 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,16 +153,16 @@
 		F3F1BD6F2C19022800381E03 /* SecureNotes */ = {
 			isa = PBXGroup;
 			children = (
+				F3F1BE5B2C19045C00381E03 /* AppState.swift */,
 				F3F1BD702C19022800381E03 /* SecureNotesApp.swift */,
 				F3F1BD722C19022800381E03 /* ContentView.swift */,
-				F3F1BD742C19022900381E03 /* Assets.xcassets */,
-				F3F1BD792C19022900381E03 /* Persistence.swift */,
-				F3F1BE5B2C19045C00381E03 /* AppState.swift */,
+				F3F1BEB62C19E5F400381E03 /* SplashScreenView */,
+				F3F1BEB72C19E60200381E03 /* SignInView */,
 				F3F1BE5A2C19039900381E03 /* NotesView */,
 				F3F1BE532C19038700381E03 /* NotesListView */,
 				F3F1BE482C19035B00381E03 /* Preview Content */,
-				F3F1BD7B2C19022900381E03 /* SecureNotes.xcdatamodeld */,
 				F3F1BD762C19022900381E03 /* Preview Content */,
+				F3F1BD742C19022900381E03 /* Assets.xcassets */,
 			);
 			path = SecureNotes;
 			sourceTree = "<group>";
@@ -222,6 +222,22 @@
 				F3F1BE562C19039100381E03 /* NotesViewProtocols.swift */,
 			);
 			path = NotesView;
+			sourceTree = "<group>";
+		};
+		F3F1BEB62C19E5F400381E03 /* SplashScreenView */ = {
+			isa = PBXGroup;
+			children = (
+				F3F1BE9A2C19DB4100381E03 /* SplashScreenView.swift */,
+			);
+			path = SplashScreenView;
+			sourceTree = "<group>";
+		};
+		F3F1BEB72C19E60200381E03 /* SignInView */ = {
+			isa = PBXGroup;
+			children = (
+				F3F1BEB22C19E4C500381E03 /* SignInView.swift */,
+			);
+			path = SignInView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -356,16 +372,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3F1BD7D2C19022900381E03 /* SecureNotes.xcdatamodeld in Sources */,
-				F3F1BD7A2C19022900381E03 /* Persistence.swift in Sources */,
 				F3F1BD732C19022800381E03 /* ContentView.swift in Sources */,
 				F3F1BD712C19022800381E03 /* SecureNotesApp.swift in Sources */,
 				F3F1BE522C19036D00381E03 /* NotesListViewModel.swift in Sources */,
+				F3F1BE9B2C19DB4100381E03 /* SplashScreenView.swift in Sources */,
 				F3F1BE582C19039100381E03 /* NotesViewModel.swift in Sources */,
 				F3F1BE5C2C19045C00381E03 /* AppState.swift in Sources */,
 				F3F1BE512C19036D00381E03 /* NotesListView.swift in Sources */,
 				F3F1BE572C19039100381E03 /* NotesView.swift in Sources */,
 				F3F1BE592C19039100381E03 /* NotesViewProtocols.swift in Sources */,
+				F3F1BEB32C19E4C500381E03 /* SignInView.swift in Sources */,
 				F3F1BE502C19036D00381E03 /* NotesListViewProtocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -696,19 +712,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		F3F1BD7B2C19022900381E03 /* SecureNotes.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				F3F1BD7C2C19022900381E03 /* SecureNotes.xcdatamodel */,
-			);
-			currentVersion = F3F1BD7C2C19022900381E03 /* SecureNotes.xcdatamodel */;
-			path = SecureNotes.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = F3F1BD652C19022800381E03 /* Project object */;
 }

@@ -7,159 +7,153 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F3F1BDAE2C19024A00381E03 /* UtilityKit.docc in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BDAD2C19024A00381E03 /* UtilityKit.docc */; };
-		F3F1BDB42C19024A00381E03 /* UtilityKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3F1BDA92C19024A00381E03 /* UtilityKit.framework */; };
-		F3F1BDB92C19024A00381E03 /* UtilityKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BDB82C19024A00381E03 /* UtilityKitTests.swift */; };
-		F3F1BDBA2C19024A00381E03 /* UtilityKit.h in Headers */ = {isa = PBXBuildFile; fileRef = F3F1BDAC2C19024A00381E03 /* UtilityKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F3F1BDC42C19025300381E03 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BDC32C19025300381E03 /* Utility.swift */; };
-		F3F1BE692C19D98D00381E03 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BE682C19D98D00381E03 /* DateFormatter.swift */; };
+		F3F1BE812C19DA6E00381E03 /* ResourceKit.docc in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BE802C19DA6E00381E03 /* ResourceKit.docc */; };
+		F3F1BE872C19DA6F00381E03 /* ResourceKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3F1BE7C2C19DA6E00381E03 /* ResourceKit.framework */; };
+		F3F1BE8C2C19DA6F00381E03 /* ResourceKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BE8B2C19DA6F00381E03 /* ResourceKitTests.swift */; };
+		F3F1BE8D2C19DA6F00381E03 /* ResourceKit.h in Headers */ = {isa = PBXBuildFile; fileRef = F3F1BE7F2C19DA6E00381E03 /* ResourceKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		F3F1BDB52C19024A00381E03 /* PBXContainerItemProxy */ = {
+		F3F1BE882C19DA6F00381E03 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = F3F1BDA02C19024A00381E03 /* Project object */;
+			containerPortal = F3F1BE732C19DA6E00381E03 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = F3F1BDA82C19024A00381E03;
-			remoteInfo = UtilityKit;
+			remoteGlobalIDString = F3F1BE7B2C19DA6E00381E03;
+			remoteInfo = ResourceKit;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		F3F1BDA92C19024A00381E03 /* UtilityKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UtilityKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F3F1BDAC2C19024A00381E03 /* UtilityKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UtilityKit.h; sourceTree = "<group>"; };
-		F3F1BDAD2C19024A00381E03 /* UtilityKit.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = UtilityKit.docc; sourceTree = "<group>"; };
-		F3F1BDB32C19024A00381E03 /* UtilityKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UtilityKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F3F1BDB82C19024A00381E03 /* UtilityKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityKitTests.swift; sourceTree = "<group>"; };
-		F3F1BDC32C19025300381E03 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
-		F3F1BE682C19D98D00381E03 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		F3F1BE7C2C19DA6E00381E03 /* ResourceKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ResourceKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3F1BE7F2C19DA6E00381E03 /* ResourceKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResourceKit.h; sourceTree = "<group>"; };
+		F3F1BE802C19DA6E00381E03 /* ResourceKit.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = ResourceKit.docc; sourceTree = "<group>"; };
+		F3F1BE862C19DA6F00381E03 /* ResourceKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ResourceKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3F1BE8B2C19DA6F00381E03 /* ResourceKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceKitTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		F3F1BDA62C19024A00381E03 /* Frameworks */ = {
+		F3F1BE792C19DA6E00381E03 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F3F1BDB02C19024A00381E03 /* Frameworks */ = {
+		F3F1BE832C19DA6F00381E03 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3F1BDB42C19024A00381E03 /* UtilityKit.framework in Frameworks */,
+				F3F1BE872C19DA6F00381E03 /* ResourceKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F3F1BD9F2C19024A00381E03 = {
+		F3F1BE722C19DA6E00381E03 = {
 			isa = PBXGroup;
 			children = (
-				F3F1BDAB2C19024A00381E03 /* UtilityKit */,
-				F3F1BDB72C19024A00381E03 /* UtilityKitTests */,
-				F3F1BDAA2C19024A00381E03 /* Products */,
+				F3F1BE7E2C19DA6E00381E03 /* ResourceKit */,
+				F3F1BE8A2C19DA6F00381E03 /* ResourceKitTests */,
+				F3F1BE7D2C19DA6E00381E03 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		F3F1BDAA2C19024A00381E03 /* Products */ = {
+		F3F1BE7D2C19DA6E00381E03 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F3F1BDA92C19024A00381E03 /* UtilityKit.framework */,
-				F3F1BDB32C19024A00381E03 /* UtilityKitTests.xctest */,
+				F3F1BE7C2C19DA6E00381E03 /* ResourceKit.framework */,
+				F3F1BE862C19DA6F00381E03 /* ResourceKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F3F1BDAB2C19024A00381E03 /* UtilityKit */ = {
+		F3F1BE7E2C19DA6E00381E03 /* ResourceKit */ = {
 			isa = PBXGroup;
 			children = (
-				F3F1BDAC2C19024A00381E03 /* UtilityKit.h */,
-				F3F1BDC32C19025300381E03 /* Utility.swift */,
-				F3F1BE682C19D98D00381E03 /* DateFormatter.swift */,
-				F3F1BDAD2C19024A00381E03 /* UtilityKit.docc */,
+				F3F1BE7F2C19DA6E00381E03 /* ResourceKit.h */,
+				F3F1BE802C19DA6E00381E03 /* ResourceKit.docc */,
 			);
-			path = UtilityKit;
+			path = ResourceKit;
 			sourceTree = "<group>";
 		};
-		F3F1BDB72C19024A00381E03 /* UtilityKitTests */ = {
+		F3F1BE8A2C19DA6F00381E03 /* ResourceKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				F3F1BDB82C19024A00381E03 /* UtilityKitTests.swift */,
+				F3F1BE8B2C19DA6F00381E03 /* ResourceKitTests.swift */,
 			);
-			path = UtilityKitTests;
+			path = ResourceKitTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		F3F1BDA42C19024A00381E03 /* Headers */ = {
+		F3F1BE772C19DA6E00381E03 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3F1BDBA2C19024A00381E03 /* UtilityKit.h in Headers */,
+				F3F1BE8D2C19DA6F00381E03 /* ResourceKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		F3F1BDA82C19024A00381E03 /* UtilityKit */ = {
+		F3F1BE7B2C19DA6E00381E03 /* ResourceKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F3F1BDBD2C19024A00381E03 /* Build configuration list for PBXNativeTarget "UtilityKit" */;
+			buildConfigurationList = F3F1BE902C19DA6F00381E03 /* Build configuration list for PBXNativeTarget "ResourceKit" */;
 			buildPhases = (
-				F3F1BDA42C19024A00381E03 /* Headers */,
-				F3F1BDA52C19024A00381E03 /* Sources */,
-				F3F1BDA62C19024A00381E03 /* Frameworks */,
-				F3F1BDA72C19024A00381E03 /* Resources */,
+				F3F1BE772C19DA6E00381E03 /* Headers */,
+				F3F1BE782C19DA6E00381E03 /* Sources */,
+				F3F1BE792C19DA6E00381E03 /* Frameworks */,
+				F3F1BE7A2C19DA6E00381E03 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = UtilityKit;
-			productName = UtilityKit;
-			productReference = F3F1BDA92C19024A00381E03 /* UtilityKit.framework */;
+			name = ResourceKit;
+			productName = ResourceKit;
+			productReference = F3F1BE7C2C19DA6E00381E03 /* ResourceKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		F3F1BDB22C19024A00381E03 /* UtilityKitTests */ = {
+		F3F1BE852C19DA6F00381E03 /* ResourceKitTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F3F1BDC02C19024A00381E03 /* Build configuration list for PBXNativeTarget "UtilityKitTests" */;
+			buildConfigurationList = F3F1BE932C19DA6F00381E03 /* Build configuration list for PBXNativeTarget "ResourceKitTests" */;
 			buildPhases = (
-				F3F1BDAF2C19024A00381E03 /* Sources */,
-				F3F1BDB02C19024A00381E03 /* Frameworks */,
-				F3F1BDB12C19024A00381E03 /* Resources */,
+				F3F1BE822C19DA6F00381E03 /* Sources */,
+				F3F1BE832C19DA6F00381E03 /* Frameworks */,
+				F3F1BE842C19DA6F00381E03 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				F3F1BDB62C19024A00381E03 /* PBXTargetDependency */,
+				F3F1BE892C19DA6F00381E03 /* PBXTargetDependency */,
 			);
-			name = UtilityKitTests;
-			productName = UtilityKitTests;
-			productReference = F3F1BDB32C19024A00381E03 /* UtilityKitTests.xctest */;
+			name = ResourceKitTests;
+			productName = ResourceKitTests;
+			productReference = F3F1BE862C19DA6F00381E03 /* ResourceKitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		F3F1BDA02C19024A00381E03 /* Project object */ = {
+		F3F1BE732C19DA6E00381E03 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
-					F3F1BDA82C19024A00381E03 = {
+					F3F1BE7B2C19DA6E00381E03 = {
 						CreatedOnToolsVersion = 15.4;
 					};
-					F3F1BDB22C19024A00381E03 = {
+					F3F1BE852C19DA6F00381E03 = {
 						CreatedOnToolsVersion = 15.4;
 					};
 				};
 			};
-			buildConfigurationList = F3F1BDA32C19024A00381E03 /* Build configuration list for PBXProject "UtilityKit" */;
+			buildConfigurationList = F3F1BE762C19DA6E00381E03 /* Build configuration list for PBXProject "ResourceKit" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -167,26 +161,26 @@
 				en,
 				Base,
 			);
-			mainGroup = F3F1BD9F2C19024A00381E03;
-			productRefGroup = F3F1BDAA2C19024A00381E03 /* Products */;
+			mainGroup = F3F1BE722C19DA6E00381E03;
+			productRefGroup = F3F1BE7D2C19DA6E00381E03 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F3F1BDA82C19024A00381E03 /* UtilityKit */,
-				F3F1BDB22C19024A00381E03 /* UtilityKitTests */,
+				F3F1BE7B2C19DA6E00381E03 /* ResourceKit */,
+				F3F1BE852C19DA6F00381E03 /* ResourceKitTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		F3F1BDA72C19024A00381E03 /* Resources */ = {
+		F3F1BE7A2C19DA6E00381E03 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F3F1BDB12C19024A00381E03 /* Resources */ = {
+		F3F1BE842C19DA6F00381E03 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -196,36 +190,34 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		F3F1BDA52C19024A00381E03 /* Sources */ = {
+		F3F1BE782C19DA6E00381E03 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3F1BE692C19D98D00381E03 /* DateFormatter.swift in Sources */,
-				F3F1BDC42C19025300381E03 /* Utility.swift in Sources */,
-				F3F1BDAE2C19024A00381E03 /* UtilityKit.docc in Sources */,
+				F3F1BE812C19DA6E00381E03 /* ResourceKit.docc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F3F1BDAF2C19024A00381E03 /* Sources */ = {
+		F3F1BE822C19DA6F00381E03 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3F1BDB92C19024A00381E03 /* UtilityKitTests.swift in Sources */,
+				F3F1BE8C2C19DA6F00381E03 /* ResourceKitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		F3F1BDB62C19024A00381E03 /* PBXTargetDependency */ = {
+		F3F1BE892C19DA6F00381E03 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F3F1BDA82C19024A00381E03 /* UtilityKit */;
-			targetProxy = F3F1BDB52C19024A00381E03 /* PBXContainerItemProxy */;
+			target = F3F1BE7B2C19DA6E00381E03 /* ResourceKit */;
+			targetProxy = F3F1BE882C19DA6F00381E03 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		F3F1BDBB2C19024A00381E03 /* Debug */ = {
+		F3F1BE8E2C19DA6F00381E03 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -291,7 +283,7 @@
 			};
 			name = Debug;
 		};
-		F3F1BDBC2C19024A00381E03 /* Release */ = {
+		F3F1BE8F2C19DA6F00381E03 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -350,7 +342,7 @@
 			};
 			name = Release;
 		};
-		F3F1BDBE2C19024A00381E03 /* Debug */ = {
+		F3F1BE912C19DA6F00381E03 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
@@ -373,7 +365,7 @@
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
-				PRODUCT_BUNDLE_IDENTIFIER = com.warrd.adlani.UtilityKit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.warrd.adlani.ResourceKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -383,7 +375,7 @@
 			};
 			name = Debug;
 		};
-		F3F1BDBF2C19024A00381E03 /* Release */ = {
+		F3F1BE922C19DA6F00381E03 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
@@ -406,7 +398,7 @@
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
-				PRODUCT_BUNDLE_IDENTIFIER = com.warrd.adlani.UtilityKit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.warrd.adlani.ResourceKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -416,16 +408,15 @@
 			};
 			name = Release;
 		};
-		F3F1BDC12C19024A00381E03 /* Debug */ = {
+		F3F1BE942C19DA6F00381E03 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = LBJP2C8845;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.warrd.adlani.UtilityKitTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.warrd.adlani.ResourceKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -433,16 +424,15 @@
 			};
 			name = Debug;
 		};
-		F3F1BDC22C19024A00381E03 /* Release */ = {
+		F3F1BE952C19DA6F00381E03 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = LBJP2C8845;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.warrd.adlani.UtilityKitTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.warrd.adlani.ResourceKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -453,34 +443,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F3F1BDA32C19024A00381E03 /* Build configuration list for PBXProject "UtilityKit" */ = {
+		F3F1BE762C19DA6E00381E03 /* Build configuration list for PBXProject "ResourceKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F3F1BDBB2C19024A00381E03 /* Debug */,
-				F3F1BDBC2C19024A00381E03 /* Release */,
+				F3F1BE8E2C19DA6F00381E03 /* Debug */,
+				F3F1BE8F2C19DA6F00381E03 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F3F1BDBD2C19024A00381E03 /* Build configuration list for PBXNativeTarget "UtilityKit" */ = {
+		F3F1BE902C19DA6F00381E03 /* Build configuration list for PBXNativeTarget "ResourceKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F3F1BDBE2C19024A00381E03 /* Debug */,
-				F3F1BDBF2C19024A00381E03 /* Release */,
+				F3F1BE912C19DA6F00381E03 /* Debug */,
+				F3F1BE922C19DA6F00381E03 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F3F1BDC02C19024A00381E03 /* Build configuration list for PBXNativeTarget "UtilityKitTests" */ = {
+		F3F1BE932C19DA6F00381E03 /* Build configuration list for PBXNativeTarget "ResourceKitTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F3F1BDC12C19024A00381E03 /* Debug */,
-				F3F1BDC22C19024A00381E03 /* Release */,
+				F3F1BE942C19DA6F00381E03 /* Debug */,
+				F3F1BE952C19DA6F00381E03 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = F3F1BDA02C19024A00381E03 /* Project object */;
+	rootObject = F3F1BE732C19DA6E00381E03 /* Project object */;
 }

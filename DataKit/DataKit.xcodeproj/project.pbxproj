@@ -13,6 +13,9 @@
 		F3F1BDE52C19029C00381E03 /* DataKit.h in Headers */ = {isa = PBXBuildFile; fileRef = F3F1BDD72C19029B00381E03 /* DataKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F3F1BE392C19030D00381E03 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BE382C19030D00381E03 /* DataService.swift */; };
 		F3F1BE5E2C1904C500381E03 /* KeychainKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BE5D2C1904C500381E03 /* KeychainKit.swift */; };
+		F3F1BE672C1919CC00381E03 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BE662C1919CC00381E03 /* DataController.swift */; };
+		F3F1BE6C2C19D9A800381E03 /* UtilityKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3F1BE6B2C19D9A800381E03 /* UtilityKit.framework */; };
+		F3F1BEB12C19E10C00381E03 /* SecureNotes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BEAF2C19E10C00381E03 /* SecureNotes.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +36,9 @@
 		F3F1BDE32C19029C00381E03 /* DataKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataKitTests.swift; sourceTree = "<group>"; };
 		F3F1BE382C19030D00381E03 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		F3F1BE5D2C1904C500381E03 /* KeychainKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainKit.swift; sourceTree = "<group>"; };
+		F3F1BE662C1919CC00381E03 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		F3F1BE6B2C19D9A800381E03 /* UtilityKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UtilityKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3F1BEB02C19E10C00381E03 /* SecureNotes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SecureNotes.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3F1BE6C2C19D9A800381E03 /* UtilityKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +67,7 @@
 				F3F1BDD62C19029B00381E03 /* DataKit */,
 				F3F1BDE22C19029C00381E03 /* DataKitTests */,
 				F3F1BDD52C19029B00381E03 /* Products */,
+				F3F1BE6A2C19D9A800381E03 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,7 +85,9 @@
 			children = (
 				F3F1BDD72C19029B00381E03 /* DataKit.h */,
 				F3F1BE5D2C1904C500381E03 /* KeychainKit.swift */,
+				F3F1BE662C1919CC00381E03 /* DataController.swift */,
 				F3F1BE382C19030D00381E03 /* DataService.swift */,
+				F3F1BEAF2C19E10C00381E03 /* SecureNotes.xcdatamodeld */,
 				F3F1BDD82C19029B00381E03 /* DataKit.docc */,
 			);
 			path = DataKit;
@@ -89,6 +99,14 @@
 				F3F1BDE32C19029C00381E03 /* DataKitTests.swift */,
 			);
 			path = DataKitTests;
+			sourceTree = "<group>";
+		};
+		F3F1BE6A2C19D9A800381E03 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F3F1BE6B2C19D9A800381E03 /* UtilityKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,7 +218,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3F1BE672C1919CC00381E03 /* DataController.swift in Sources */,
 				F3F1BE5E2C1904C500381E03 /* KeychainKit.swift in Sources */,
+				F3F1BEB12C19E10C00381E03 /* SecureNotes.xcdatamodeld in Sources */,
 				F3F1BDD92C19029B00381E03 /* DataKit.docc in Sources */,
 				F3F1BE392C19030D00381E03 /* DataService.swift in Sources */,
 			);
@@ -481,6 +501,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F3F1BEAF2C19E10C00381E03 /* SecureNotes.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F3F1BEB02C19E10C00381E03 /* SecureNotes.xcdatamodel */,
+			);
+			currentVersion = F3F1BEB02C19E10C00381E03 /* SecureNotes.xcdatamodel */;
+			name = SecureNotes.xcdatamodeld;
+			path = "/Users/warrdadlani/Documents/Projects/iOS/Projects/secure-notes/DataKit/DataKit/SecureNotes.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F3F1BDCB2C19029B00381E03 /* Project object */;
 }

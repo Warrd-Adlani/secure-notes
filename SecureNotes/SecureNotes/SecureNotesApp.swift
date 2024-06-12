@@ -9,12 +9,13 @@ import SwiftUI
 
 @main
 struct SecureNotesApp: App {
-    let persistenceController = PersistenceController.shared
+//    let persistenceController = PersistenceController.shared
 
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environmentObject(AppState())
+//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }

@@ -6,6 +6,9 @@
 //
 
 import Foundation
+import Combine
+import SwiftUI
+import DomainKit
 
 public protocol DataServiceProtocol {
     init()
@@ -18,8 +21,15 @@ public protocol DataServiceProtocol {
 
 public final class DataService: DataServiceProtocol {
     
+    private lazy var dataController = DataController()
+    @FetchRequest(sortDescriptors: []) var notes: FetchedResults<Note>
+    
+    public required init() {
+        dataController.loadPersistantStores()
+    }
+    
     public func saveNote(with title: String, and content: String) {
-            
+        
     }
     
     public func removeNote(with id: UUID) {
@@ -34,5 +44,7 @@ public final class DataService: DataServiceProtocol {
             
     }
     
-    public required init(){}
+//    public func getNotes() -> AnyPublisher<[Note]> {
+//        
+//    }
 }

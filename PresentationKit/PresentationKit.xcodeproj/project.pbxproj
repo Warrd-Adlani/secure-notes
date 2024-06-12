@@ -11,6 +11,7 @@
 		F3F1BE292C1902F800381E03 /* PresentationKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3F1BE1E2C1902F800381E03 /* PresentationKit.framework */; };
 		F3F1BE2E2C1902F800381E03 /* PresentationKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BE2D2C1902F800381E03 /* PresentationKitTests.swift */; };
 		F3F1BE2F2C1902F800381E03 /* PresentationKit.h in Headers */ = {isa = PBXBuildFile; fileRef = F3F1BE212C1902F800381E03 /* PresentationKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F3F1BEB52C19E54500381E03 /* AppLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BEB42C19E54500381E03 /* AppLogoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		F3F1BE222C1902F800381E03 /* PresentationKit.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = PresentationKit.docc; sourceTree = "<group>"; };
 		F3F1BE282C1902F800381E03 /* PresentationKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PresentationKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3F1BE2D2C1902F800381E03 /* PresentationKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationKitTests.swift; sourceTree = "<group>"; };
+		F3F1BEB42C19E54500381E03 /* AppLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLogoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				F3F1BE212C1902F800381E03 /* PresentationKit.h */,
+				F3F1BEB42C19E54500381E03 /* AppLogoView.swift */,
 				F3F1BE222C1902F800381E03 /* PresentationKit.docc */,
 			);
 			path = PresentationKit;
@@ -195,6 +198,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3F1BE232C1902F800381E03 /* PresentationKit.docc in Sources */,
+				F3F1BEB52C19E54500381E03 /* AppLogoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +415,7 @@
 		F3F1BE362C1902F800381E03 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = LBJP2C8845;
@@ -427,6 +432,7 @@
 		F3F1BE372C1902F800381E03 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = LBJP2C8845;
