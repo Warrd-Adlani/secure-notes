@@ -8,43 +8,39 @@
 import Foundation
 import Combine
 import SwiftUI
-import DomainKit
-
-public protocol DataServiceProtocol {
-    init()
-    
-    func saveNote(with title: String, and content: String)
-    func removeNote(with id: UUID)
-    func updateNote(with id: UUID)
-    func undoNote(with id: UUID)
-}
 
 public final class DataService: DataServiceProtocol {
     
-    private lazy var dataController = DataController()
-    @FetchRequest(sortDescriptors: []) var notes: FetchedResults<Note>
+    private var storeService: StoreService?
     
-    public required init() {
-        dataController.loadPersistantStores()
+    public required init(storageTech: StorageType) {
+        switch storageTech {
+        case .coreData:
+            self.storeService = CoreDataService()
+        case .swiftData:
+            break // TODO
+        case .realm:
+            break // TODO
+        }
     }
     
     public func saveNote(with title: String, and content: String) {
-        
+        storeService?.saveNote(with: title, and: content)
     }
     
     public func removeNote(with id: UUID) {
-            
+        storeService?.removeNote(with: id)
     }
     
     public func updateNote(with id: UUID) {
-            
+        storeService?.updateNote(with: id)
     }
     
-    public func undoNote(with id: UUID) {
-            
+    public func readNote(with id: UUID) {
+        storeService?.readNote(with: id)
     }
     
-//    public func getNotes() -> AnyPublisher<[Note]> {
-//        
-//    }
+    public func fetchNotes() {
+        storeService?.fetchNotes()
+    }
 }

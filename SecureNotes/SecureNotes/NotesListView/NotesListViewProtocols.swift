@@ -7,7 +7,12 @@
 
 import Foundation
 import SwiftUI
+import Combine
+import CoreData
+import DomainKit
 
-public protocol NotesListViewModelProtocol: ObservableObject {}
+public protocol NotesListViewModelProtocol: ObservableObject {
+    func fetchNotes()
+}
 
 public protocol NotesListViewProtocol: View {}

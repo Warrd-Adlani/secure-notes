@@ -7,13 +7,21 @@
 
 import SwiftUI
 
-struct NotesListView: NotesListViewProtocol {
+struct NotesListView<ViewModel: NotesListViewModelProtocol>: NotesListViewProtocol {
+    private var viewModel: ViewModel
+    
+    init(viewModel: ViewModel) {
+        self.viewModel = viewModel
+    }
     
     var body: some View {
         VStack {
             NavigationStack {
                 List(0...10, id: \.self) { _ in
                     Text("Notes view")
+                        .onTapGesture {
+                            self.viewModel.fetchNotes()
+                        }
                 }
             }
         }
@@ -22,5 +30,5 @@ struct NotesListView: NotesListViewProtocol {
 }
 
 #Preview {
-    NotesListView()
+    NotesListView(viewModel: NotesListViewModel())
 }

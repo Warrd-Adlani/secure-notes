@@ -11,8 +11,8 @@
 		F3F1BE032C1902B500381E03 /* DomainKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3F1BDF82C1902B500381E03 /* DomainKit.framework */; };
 		F3F1BE082C1902B500381E03 /* DomainKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BE072C1902B500381E03 /* DomainKitTests.swift */; };
 		F3F1BE092C1902B500381E03 /* DomainKit.h in Headers */ = {isa = PBXBuildFile; fileRef = F3F1BDFB2C1902B500381E03 /* DomainKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F3F1BEAD2C19E0D500381E03 /* Note+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BEAB2C19E0D500381E03 /* Note+CoreDataClass.swift */; };
-		F3F1BEAE2C19E0D500381E03 /* Note+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BEAC2C19E0D500381E03 /* Note+CoreDataProperties.swift */; };
+		F3F1BEFF2C1A23E100381E03 /* Note+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BEFD2C1A23E100381E03 /* Note+CoreDataClass.swift */; };
+		F3F1BF002C1A23E100381E03 /* Note+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BEFE2C1A23E100381E03 /* Note+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,8 +31,8 @@
 		F3F1BDFC2C1902B500381E03 /* DomainKit.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = DomainKit.docc; sourceTree = "<group>"; };
 		F3F1BE022C1902B500381E03 /* DomainKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DomainKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3F1BE072C1902B500381E03 /* DomainKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainKitTests.swift; sourceTree = "<group>"; };
-		F3F1BEAB2C19E0D500381E03 /* Note+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataClass.swift"; sourceTree = "<group>"; };
-		F3F1BEAC2C19E0D500381E03 /* Note+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F3F1BEFD2C1A23E100381E03 /* Note+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataClass.swift"; sourceTree = "<group>"; };
+		F3F1BEFE2C1A23E100381E03 /* Note+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,9 +75,9 @@
 		F3F1BDFA2C1902B500381E03 /* DomainKit */ = {
 			isa = PBXGroup;
 			children = (
+				F3F1BEFD2C1A23E100381E03 /* Note+CoreDataClass.swift */,
+				F3F1BEFE2C1A23E100381E03 /* Note+CoreDataProperties.swift */,
 				F3F1BDFB2C1902B500381E03 /* DomainKit.h */,
-				F3F1BEAB2C19E0D500381E03 /* Note+CoreDataClass.swift */,
-				F3F1BEAC2C19E0D500381E03 /* Note+CoreDataProperties.swift */,
 				F3F1BDFC2C1902B500381E03 /* DomainKit.docc */,
 			);
 			path = DomainKit;
@@ -200,9 +200,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3F1BEFF2C1A23E100381E03 /* Note+CoreDataClass.swift in Sources */,
+				F3F1BF002C1A23E100381E03 /* Note+CoreDataProperties.swift in Sources */,
 				F3F1BDFD2C1902B500381E03 /* DomainKit.docc in Sources */,
-				F3F1BEAD2C19E0D500381E03 /* Note+CoreDataClass.swift in Sources */,
-				F3F1BEAE2C19E0D500381E03 /* Note+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

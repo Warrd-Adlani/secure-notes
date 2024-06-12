@@ -39,5 +39,5 @@ struct NoteView<ViewModel: NoteViewModelProtocol>: NoteViewProtocol {
 }
 
 #Preview {
-    NoteView(viewModel: NoteViewModel(dataService: DataService()))
+    NoteView(viewModel: NoteViewModel(dataService: DataService(storageTech: .coreData)))
 }

@@ -20,7 +20,7 @@ struct ContentView: View {
             case .signIn:
                 SignInView()
             case .notes:
-                NotesListView()
+                NotesListView(viewModel: NotesListViewModel())
             }
         }
         .onAppear() {
