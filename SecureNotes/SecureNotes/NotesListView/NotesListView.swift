@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import DomainKit
+import DataKit
 
 struct NotesListView<ViewModel: NotesListViewModelProtocol>: NotesListViewProtocol {
     @ObservedObject private var viewModel: ViewModel
@@ -15,12 +15,14 @@ struct NotesListView<ViewModel: NotesListViewModelProtocol>: NotesListViewProtoc
         self.viewModel = viewModel
     }
     
+    @State private var path: [String] = []
+    
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $path) {
             VStack {
                 List {
                     ForEach(viewModel.notes) { note in
-                        NavigationLink(value: note) {
+                        NavigationLink(destination: NoteView(viewModel: NoteViewModel(note: note, dataService: DataService(storageTech: .coreData)))) {
                             NoteListViewCell(title: note.title ?? "", timestamp: note.timestamp ?? Date())
                         }
                     }
@@ -44,6 +46,9 @@ struct NotesListView<ViewModel: NotesListViewModelProtocol>: NotesListViewProtoc
         .onAppear(perform: {
             viewModel.fetchNotes()
         })
+        .task {
+            viewModel.fetchNotes()
+        }
     }
 }
 

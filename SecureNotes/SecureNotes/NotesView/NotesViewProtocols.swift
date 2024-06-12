@@ -10,14 +10,22 @@ import DataKit
 import SwiftUI
 
 protocol NoteViewModelProtocol: ObservableObject {
+    
+    // Variables
     var noteTitle: String { get set }
     var noteContent: String { get set }
+    var alert: NoteViewAlert? { get set }
+    var showAlert: Bool { get set }
     
-    init(dataService: DataServiceProtocol)
-    func saveNote(with title: String, and body: String)
-    func updateNote(for id: String)
-    func removeNote(for id: String)
-    func readNote(for id: String)
+    init(note: Note?, dataService: DataServiceProtocol)
+    
+    // View methods
+    func onAppear()
+    
+    // Note methods
+    func saveNote()
+    func updateNote()
+    func deleteNote()
 }
 
 protocol NoteViewProtocol: View {}

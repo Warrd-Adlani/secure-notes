@@ -218,8 +218,8 @@
 			isa = PBXGroup;
 			children = (
 				F3F1BE562C19039100381E03 /* NotesViewProtocols.swift */,
-				F3F1BE542C19039100381E03 /* NoteView.swift */,
 				F3F1BE552C19039100381E03 /* NoteViewModel.swift */,
+				F3F1BE542C19039100381E03 /* NoteView.swift */,
 			);
 			path = NotesView;
 			sourceTree = "<group>";

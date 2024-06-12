@@ -6,28 +6,117 @@
 //
 
 import Foundation
+import Combine
 import DataKit
+
+struct AlertItem {
+    let title: String
+    let body: String
+}
+
+enum NoteViewAlert {
+    case saved
+    case updated
+    
+    var alert: AlertItem? {
+        switch self {
+        case .saved:
+            return AlertItem(title: "Saved", body: "")
+        case .updated:
+            return AlertItem(title: "Updated", body: "")
+        }
+    }
+}
 
 class NoteViewModel: NoteViewModelProtocol {
     @Published var noteTitle: String = "New note"
     @Published var noteContent: String = ""
-
-    private let dataService: DataServiceProtocol
+    @Published var alert: NoteViewAlert? {
+        didSet {
+            showAlert = true
+        }
+    }
+    @Published var showAlert = false
     
-    required init(dataService: DataServiceProtocol) {
+    private let note: Note?
+    
+    private let dataService: DataServiceProtocol
+    private var cancellables = Set<AnyCancellable>()
+    
+    required init(note: Note?, dataService: DataServiceProtocol) {
+        self.note = note
         self.dataService = dataService
     }
     
-    func saveNote(with title: String, and body: String) {
-        dataService.saveNote(with: "Title ABC", and: "Some random content")
+    func onAppear() {
+        noteTitle = note?.title ?? "New note"
+        noteContent = note?.content ?? ""
     }
-    func updateNote(for id: String) {}
-    func removeNote(for id: String) {}
+    
+    func saveNote() {
+        guard
+            note == nil
+        else {
+            updateNote()
+            return
+        }
+        
+        dataService
+            .saveNote(with: noteTitle, and: noteContent)
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { [weak self] result in
+                switch result {
+                case .finished:
+                    self?.alert = .saved
+                case .failure(_):
+                    break
+                }}, receiveValue: { _ in})
+            .store(in: &cancellables)
+    }
+    
+    func updateNote() {
+        guard
+            let id = note?.id
+        else {
+            return
+        }
+        
+        dataService
+            .updateNote(with: id, title: noteTitle, and: noteContent)
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { [weak self] result in
+                switch result {
+                case .finished:
+                    self?.alert = .updated
+                case .failure(_):
+                    break
+                }}, receiveValue: { _ in})
+            .store(in: &cancellables)
+    }
+    
+    func deleteNote() {
+        guard
+            let id = note?.id
+        else {
+            return
+        }
+        dataService
+            .removeNote(with: id)
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { result in
+                switch result {
+                case .finished:
+                    break
+                case .failure(_):
+                    break
+                }}, receiveValue: { _ in})
+            .store(in: &cancellables)
+    }
     func readNote(for id: String) {}
 }
 
 extension NoteViewModel {
     static var mock: NoteViewModel {
-        return Self(dataService: DataService(storageTech: .coreData))
+        return Self(note: nil, dataService: DataService(storageTech: .coreData))
     }
 }

@@ -13,12 +13,14 @@ import UtilityKit
 final class NotesListViewModel: NotesListViewModelProtocol {
     @Published var notes: [Note] = []
     
-    private let dataService: DataService
+    private (set) var dataService: DataService
     private var cancellables = Set<AnyCancellable>()
     
     init(dataService: DataService = DataService(storageTech: .coreData)) {
         self.dataService = dataService
     }
+    
+    func onAppear() {}
     
     func fetchNotes() {
         dataService.fetchAllNotes().sink { result in
@@ -47,7 +49,6 @@ final class NotesListViewModel: NotesListViewModelProtocol {
                 log(success)
             }
             .store(in: &cancellables)
-
     }
 }
 

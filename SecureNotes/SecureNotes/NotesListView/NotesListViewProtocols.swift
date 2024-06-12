@@ -10,8 +10,14 @@ import SwiftUI
 import DataKit
 
 public protocol NotesListViewModelProtocol: ObservableObject {
+    // Properties
     var notes: [Note] { get set }
+    var dataService: DataService { get }
     
+    // View methods
+    func onAppear()
+    
+    // Note methods
     func fetchNotes()
     func deleteNote(_ note: Note)
 }

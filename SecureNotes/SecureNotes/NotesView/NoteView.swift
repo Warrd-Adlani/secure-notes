@@ -10,7 +10,8 @@ import SwiftUI
 struct NoteView<ViewModel: NoteViewModelProtocol>: NoteViewProtocol {
     
     @ObservedObject var viewModel: ViewModel
-    
+    @Environment (\.dismiss) var dismiss
+
     init(viewModel: ViewModel) {
         self.viewModel = viewModel
     }
@@ -33,7 +34,30 @@ struct NoteView<ViewModel: NoteViewModelProtocol>: NoteViewProtocol {
             .textFieldStyle(.roundedBorder)
             .disableAutocorrection(true)
         }
+        .alert(isPresented: $viewModel.showAlert, content: {
+            Alert(title: Text(viewModel.alert?.alert?.title ?? ""))
+        })
         .padding()
+        .onAppear {
+            viewModel.onAppear()
+        }
+        .toolbar(content: {
+            HStack {
+                Button {
+                    viewModel.deleteNote()
+                } label: {
+                    Text("Delete note")
+                }
+                
+                Spacer()
+                
+                Button {
+                    viewModel.saveNote()
+                } label: {
+                    Text("Save note")
+                }
+            }
+        })
     }
 }
 

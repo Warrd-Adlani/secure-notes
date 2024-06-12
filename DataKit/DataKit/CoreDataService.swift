@@ -104,6 +104,7 @@ internal final class CoreDataService: StoreService {
                 
                 do {
                     try managedObjectContext.save()
+                    promise(.success(true))
                     log("Updated successfully")
                 } catch {
                     log("Failed to update note: \(error)")
@@ -116,7 +117,6 @@ internal final class CoreDataService: StoreService {
     func fetchAllNotes() -> Future<[Note], Error> {
         return Future { [self] promise in
             let fetchRequest: NSFetchRequest<Note> = Note.fetchRequest()
-            let subject = PassthroughSubject<[Note], Never>()
             do {
                 let notes = try managedObjectContext.fetch(fetchRequest)
                 promise(.success(notes))
