@@ -34,6 +34,7 @@
 		F3F1BE9B2C19DB4100381E03 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BE9A2C19DB4100381E03 /* SplashScreenView.swift */; };
 		F3F1BEB32C19E4C500381E03 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BEB22C19E4C500381E03 /* SignInView.swift */; };
 		F3F1BF0A2C1A3E0C00381E03 /* NoteListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BF092C1A3E0C00381E03 /* NoteListViewCell.swift */; };
+		F3F1BF102C1B1D3100381E03 /* Security.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BF0F2C1B1D3100381E03 /* Security.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		F3F1BE9A2C19DB4100381E03 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		F3F1BEB22C19E4C500381E03 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		F3F1BF092C1A3E0C00381E03 /* NoteListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListViewCell.swift; sourceTree = "<group>"; };
+		F3F1BF0F2C1B1D3100381E03 /* Security.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Security.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 			children = (
 				F3F1BE5B2C19045C00381E03 /* AppState.swift */,
 				F3F1BD702C19022800381E03 /* SecureNotesApp.swift */,
+				F3F1BF0F2C1B1D3100381E03 /* Security.swift */,
 				F3F1BD722C19022800381E03 /* ContentView.swift */,
 				F3F1BEB62C19E5F400381E03 /* SplashScreenView */,
 				F3F1BEB72C19E60200381E03 /* SignInView */,
@@ -373,6 +376,7 @@
 			files = (
 				F3F1BD732C19022800381E03 /* ContentView.swift in Sources */,
 				F3F1BD712C19022800381E03 /* SecureNotesApp.swift in Sources */,
+				F3F1BF102C1B1D3100381E03 /* Security.swift in Sources */,
 				F3F1BF0A2C1A3E0C00381E03 /* NoteListViewCell.swift in Sources */,
 				F3F1BE522C19036D00381E03 /* NotesListViewModel.swift in Sources */,
 				F3F1BE9B2C19DB4100381E03 /* SplashScreenView.swift in Sources */,
@@ -549,6 +553,7 @@
 				DEVELOPMENT_TEAM = LBJP2C8845;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "We need to unlock your notes";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -578,6 +583,7 @@
 				DEVELOPMENT_TEAM = LBJP2C8845;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "We need to unlock your notes";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
