@@ -10,6 +10,7 @@ import Foundation
 protocol SignInViewModelProtocol: ObservableObject {
     associatedtype Coordinator: AppCoordinatorProtocol
     init(coordinator: Coordinator)
+    func signIn()
 }
 
 class SignInViewModel<Coordinator: AppCoordinatorProtocol>: SignInViewModelProtocol {
@@ -20,6 +21,6 @@ class SignInViewModel<Coordinator: AppCoordinatorProtocol>: SignInViewModelProto
     }
     
     func signIn() {
-            coordinator.showNotesList()
+        coordinator.showNotesList()
     }
 }

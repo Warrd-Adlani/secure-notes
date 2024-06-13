@@ -10,13 +10,16 @@ import Foundation
 import DataKit
 import UtilityKit
 
-final class NotesListViewModel: NotesListViewModelProtocol {
+final class NotesListViewModel<Coordinator: AppCoordinatorProtocol>: NotesListViewModelProtocol {
+    
     @Published var notes: [Note] = []
     
     private (set) var dataService: DataService
     private var cancellables = Set<AnyCancellable>()
+    private let coordinator: Coordinator
     
-    init(dataService: DataService = DataService(storageTech: .coreData)) {
+    init(coordinator: Coordinator, dataService: DataService) {
+        self.coordinator = coordinator
         self.dataService = dataService
     }
     
@@ -52,10 +55,14 @@ final class NotesListViewModel: NotesListViewModelProtocol {
             }
             .store(in: &cancellables)
     }
+    
+    func selectNote(_ note: Note) {
+        coordinator.showNote(note: note)
+    }
 }
 
 extension NotesListViewModel {
     static var mock: Self {
-        return Self(dataService: DataService(storageTech: .coreData))
+        return Self(coordinator: AppCoordinator() as! Coordinator, dataService: DataService(storageTech: .coreData))
     }
 }

@@ -22,7 +22,7 @@ struct ContentView: View {
                 case .signIn:
                     SignInView(viewModel: SignInViewModel(coordinator: coordinator))
                 case .notesList:
-                    NotesListView(viewModel: NotesListViewModel())
+                    NotesListView(viewModel: NotesListViewModel(coordinator: coordinator, dataService: DataService(storageTech: .coreData)))
                 case .note(let note):
                     NoteView(viewModel: NoteViewModel(note: note, dataService: DataService(storageTech: .coreData)))
                 }

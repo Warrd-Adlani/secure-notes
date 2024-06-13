@@ -9,16 +9,20 @@ import Foundation
 import SwiftUI
 import DataKit
 
-public protocol NotesListViewModelProtocol: ObservableObject {
+protocol NotesListViewModelProtocol: ObservableObject {
+    associatedtype Coordinator: AppCoordinatorProtocol
     // Properties
     var notes: [Note] { get set }
     var dataService: DataService { get }
     
+    init(coordinator: Coordinator, dataService: DataService) 
+
     // View methods
     func onAppear()
     
     // Note methods
     func deleteNote(_ note: Note)
+    func selectNote(_ note: Note) 
 }
 
-public protocol NotesListViewProtocol: View {}
+protocol NotesListViewProtocol: View {}

@@ -11,7 +11,7 @@ import DataKit
 @main
 struct SecureNotesApp: App {
 
-    @StateObject private var coordinator = AppCoordinator(dataService: DataService(storageTech: .coreData))
+    @StateObject private var coordinator = AppCoordinator()
     @StateObject private var appSatete = AppState()
     var body: some Scene {
         WindowGroup {

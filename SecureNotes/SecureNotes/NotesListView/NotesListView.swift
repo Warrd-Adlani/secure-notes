@@ -51,5 +51,5 @@ struct NotesListView<ViewModel: NotesListViewModelProtocol>: NotesListViewProtoc
 }
 
 #Preview {
-    NotesListView(viewModel: NotesListViewModel.mock)
+    NotesListView(viewModel: NotesListViewModel(coordinator: AppCoordinator(), dataService: DataService(storageTech: .coreData)))
 }

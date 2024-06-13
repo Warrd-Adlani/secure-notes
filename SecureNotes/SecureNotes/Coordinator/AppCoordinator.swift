@@ -11,12 +11,7 @@ import DataKit
 
 class AppCoordinator: AppCoordinatorProtocol {
     @Published var currentView: AppView = .splash
-    private var dataService: DataService
-    
-    init(dataService: DataService) {
-        self.dataService = dataService
-    }
-    
+
     enum AppView {
         case splash
         case signIn

@@ -13,11 +13,6 @@ protocol SignInViewProtocol: View {}
 
 struct SignInView<Coordinator: AppCoordinatorProtocol>: SignInViewProtocol {
     @EnvironmentObject var appState: AppState
-    @State private var isAuthenticated = false {
-        didSet {
-            appState.isAuthorised = isAuthenticated
-        }
-    }
     @State private var showAlert = false
     
     @ObservedObject var viewModel: SignInViewModel<Coordinator>
@@ -40,7 +35,7 @@ struct SignInView<Coordinator: AppCoordinatorProtocol>: SignInViewProtocol {
             AuthenticationServices.shared.callback = { [self] result in
                 switch result {
                 case .success(let isAuthenticated):
-                    self.isAuthenticated = isAuthenticated
+                    viewModel.signIn()
                 case .failure(_):
                     self.showAlert = true
                 }
