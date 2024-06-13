@@ -30,7 +30,6 @@
 		F3F1BE572C19039100381E03 /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BE542C19039100381E03 /* NoteView.swift */; };
 		F3F1BE582C19039100381E03 /* NoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BE552C19039100381E03 /* NoteViewModel.swift */; };
 		F3F1BE592C19039100381E03 /* NotesViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BE562C19039100381E03 /* NotesViewProtocols.swift */; };
-		F3F1BE5C2C19045C00381E03 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BE5B2C19045C00381E03 /* AppState.swift */; };
 		F3F1BE9B2C19DB4100381E03 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BE9A2C19DB4100381E03 /* SplashScreenView.swift */; };
 		F3F1BEB32C19E4C500381E03 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BEB22C19E4C500381E03 /* SignInView.swift */; };
 		F3F1BF0A2C1A3E0C00381E03 /* NoteListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BF092C1A3E0C00381E03 /* NoteListViewCell.swift */; };
@@ -100,7 +99,6 @@
 		F3F1BE542C19039100381E03 /* NoteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
 		F3F1BE552C19039100381E03 /* NoteViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteViewModel.swift; sourceTree = "<group>"; };
 		F3F1BE562C19039100381E03 /* NotesViewProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesViewProtocols.swift; sourceTree = "<group>"; };
-		F3F1BE5B2C19045C00381E03 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		F3F1BE9A2C19DB4100381E03 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		F3F1BEB22C19E4C500381E03 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		F3F1BF092C1A3E0C00381E03 /* NoteListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListViewCell.swift; sourceTree = "<group>"; };
@@ -166,7 +164,6 @@
 		F3F1BD6F2C19022800381E03 /* SecureNotes */ = {
 			isa = PBXGroup;
 			children = (
-				F3F1BE5B2C19045C00381E03 /* AppState.swift */,
 				F3F1BD702C19022800381E03 /* SecureNotesApp.swift */,
 				F3F1BD722C19022800381E03 /* ContentView.swift */,
 				F3F1BF462C1B359300381E03 /* ViewProtocols.swift */,
@@ -404,7 +401,6 @@
 				F3F1BE522C19036D00381E03 /* NotesListViewModel.swift in Sources */,
 				F3F1BE9B2C19DB4100381E03 /* SplashScreenView.swift in Sources */,
 				F3F1BE582C19039100381E03 /* NoteViewModel.swift in Sources */,
-				F3F1BE5C2C19045C00381E03 /* AppState.swift in Sources */,
 				F3F1BF422C1B2E0000381E03 /* SignInViewModel.swift in Sources */,
 				F3F1BE512C19036D00381E03 /* NotesListView.swift in Sources */,
 				F3F1BF452C1B2E9100381E03 /* AppCoordinatorProtocols.swift in Sources */,

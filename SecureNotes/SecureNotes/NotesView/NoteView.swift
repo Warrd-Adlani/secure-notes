@@ -10,7 +10,7 @@ import DataKit
 
 struct NoteView<ViewModel: NoteViewModelProtocol>: NoteViewProtocol {
     @ObservedObject var viewModel: ViewModel
-
+    
     init(viewModel: ViewModel) {
         self.viewModel = viewModel
     }
@@ -42,6 +42,14 @@ struct NoteView<ViewModel: NoteViewModelProtocol>: NoteViewProtocol {
                     .ignoresSafeArea()
             }
         }
+        .alert(isPresented: $viewModel.showAlert) {
+            Alert(title: Text("Confirm Deletion"),
+                  message: Text("Are you sure you want to delete this note?"),
+                  primaryButton: .destructive(Text("Delete")) {
+                viewModel.deleteNote(showWarning: false)
+            },
+                  secondaryButton: .cancel())
+        }
         .toolbar(content: {
             noteToolBarView()
         })
@@ -61,7 +69,7 @@ struct NoteView<ViewModel: NoteViewModelProtocol>: NoteViewProtocol {
             Spacer()
             
             Button {
-                viewModel.deleteNote()
+                viewModel.deleteNote(showWarning: true)
             } label: {
                 Text("Delete note")
             }

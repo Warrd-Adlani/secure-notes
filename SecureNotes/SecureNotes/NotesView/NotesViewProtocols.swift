@@ -17,6 +17,7 @@ protocol NoteViewModelProtocol: ViewModelling {
     var deleteEnabled: Bool { get set }
     var toastMessage: String { get set }
     var showToast: Bool { get set }
+    var showAlert: Bool { get set }
     
     init(note: Note?, coordinator: Coordinator, dataService: DataServiceProtocol)
     
@@ -27,7 +28,7 @@ protocol NoteViewModelProtocol: ViewModelling {
     // Note methods
     func saveNote()
     func updateNote()
-    func deleteNote()
+    func deleteNote(showWarning: Bool)
 }
 
 protocol NoteViewProtocol: View {}

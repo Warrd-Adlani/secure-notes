@@ -26,6 +26,7 @@ struct NotesListView<ViewModel: NotesListViewModelProtocol>: NotesListViewProtoc
                             }
                     }
                     .onDelete(perform: { indexSet in
+                        // TODO: Add alert warning for destructive operation
                         indexSet.map { viewModel.notes[$0] }.forEach { note in
                             viewModel.delete(note: note)
                         }

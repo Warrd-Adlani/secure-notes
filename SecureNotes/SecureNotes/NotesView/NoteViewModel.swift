@@ -20,6 +20,7 @@ class NoteViewModel<Coordinator: AppCoordinatorProtocol>: NoteViewModelProtocol 
     @Published var noteContent: String = "Test toast"
     @Published var deleteEnabled: Bool = true
     @Published var showToast: Bool = false
+    @Published var showAlert: Bool = false
     var toastMessage: String = ""
     
     private let coordinator: Coordinator
@@ -98,7 +99,13 @@ class NoteViewModel<Coordinator: AppCoordinatorProtocol>: NoteViewModelProtocol 
         coordinator.showNotesList()
     }
     
-    func deleteNote() {
+    func deleteNote(showWarning: Bool = true) {
+        
+        if showWarning {
+            showAlert = true
+            return
+        }
+        
         guard
             let id = note?.id
         else {

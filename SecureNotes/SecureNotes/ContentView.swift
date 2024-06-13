@@ -10,7 +10,6 @@ import CoreData
 import DataKit
 
 struct ContentView: View {
-    @EnvironmentObject var appState: AppState
     @EnvironmentObject var coordinator: AppCoordinator
     
     var body: some View {
@@ -50,5 +49,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .environmentObject(AppState())
+        .environmentObject(AppCoordinator())
 }

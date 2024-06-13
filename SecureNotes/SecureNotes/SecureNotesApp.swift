@@ -12,11 +12,10 @@ import DataKit
 struct SecureNotesApp: App {
 
     @StateObject private var coordinator = AppCoordinator()
-    @StateObject private var appSatete = AppState()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(appSatete)
                 .environmentObject(coordinator)
         }
     }
