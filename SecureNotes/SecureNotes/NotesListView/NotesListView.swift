@@ -42,7 +42,7 @@ struct NotesListView<ViewModel: NotesListViewModelProtocol>: NotesListViewProtoc
             })
         }
         .onAppear {
-            viewModel.fetchNotes()
+            viewModel.onAppear()
         }
     }
 }

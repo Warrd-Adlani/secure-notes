@@ -18,7 +18,6 @@ public protocol NotesListViewModelProtocol: ObservableObject {
     func onAppear()
     
     // Note methods
-    func fetchNotes()
     func deleteNote(_ note: Note)
 }
 

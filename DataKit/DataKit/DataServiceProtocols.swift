@@ -9,6 +9,7 @@ import Foundation
 import Combine
 
 public protocol StoreService {
+    var notesPublisher: AnyPublisher<[Note], Never> { get }
     func saveNote(with title: String, and content: String) -> Future<Note, Error>
     func removeNote(with id: UUID) -> Future<Bool, Error>
     func fetchNote(with id: UUID)-> Note?

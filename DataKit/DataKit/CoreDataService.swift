@@ -4,7 +4,7 @@ import Combine
 import DomainKit
 import UtilityKit
 
-internal final class CoreDataService: StoreService {
+internal final class CoreDataService: NSObject, StoreService {
     static var shared = CoreDataService() // Prevents multiple creations of the store
     private let modelName = "SecureNotes"
 
@@ -29,8 +29,10 @@ internal final class CoreDataService: StoreService {
         return container.viewContext
     }
     
-    private init() {
+    private override init() {
+        super.init()
         loadPersistentStores()
+        configureFetchedResultsController()
     }
     
     private func loadPersistentStores() {
@@ -40,6 +42,34 @@ internal final class CoreDataService: StoreService {
             }
             print("loadPersistentStores loaded")
         }
+    }
+    
+    private var fetchedResultsController: NSFetchedResultsController<Note>?
+
+    private func configureFetchedResultsController() {
+        let fetchRequest: NSFetchRequest<Note> = Note.fetchRequest()
+        fetchRequest.sortDescriptors = [NSSortDescriptor(keyPath: \Note.timestamp, ascending: false)]
+        
+        fetchedResultsController = NSFetchedResultsController(
+            fetchRequest: fetchRequest,
+            managedObjectContext: managedObjectContext,
+            sectionNameKeyPath: nil,
+            cacheName: nil
+        )
+        
+        fetchedResultsController?.delegate = self
+        
+        do {
+            try fetchedResultsController?.performFetch()
+        } catch {
+            print("Failed to fetch notes: \(error)")
+        }
+    }
+    
+    // Publish updates to the list of notes
+    private var notesSubject = PassthroughSubject<[Note], Never>()
+    public var notesPublisher: AnyPublisher<[Note], Never> {
+        notesSubject.eraseToAnyPublisher()
     }
     
     func saveNote(with title: String, and content: String) -> Future<Note, Error> {
@@ -126,5 +156,12 @@ internal final class CoreDataService: StoreService {
                 promise(.failure(error))
             }
         }
+    }
+}
+
+extension CoreDataService: NSFetchedResultsControllerDelegate {
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        guard let notes = controller.fetchedObjects as? [Note] else { return }
+        notesSubject.send(notes)
     }
 }

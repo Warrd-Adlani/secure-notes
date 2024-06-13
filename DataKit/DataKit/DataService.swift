@@ -13,6 +13,10 @@ import DomainKit
 public final class DataService: DataServiceProtocol {
     private var storeService: StoreService
     
+    public var notesPublisher: AnyPublisher<[Note], Never> {
+        return storeService.notesPublisher
+    }
+
     public required init(storageTech: StorageType) {
         switch storageTech {
         case .coreData:

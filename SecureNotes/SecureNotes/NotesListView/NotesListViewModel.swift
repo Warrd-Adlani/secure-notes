@@ -20,19 +20,19 @@ final class NotesListViewModel: NotesListViewModelProtocol {
         self.dataService = dataService
     }
     
-    func onAppear() {}
-    
-    func fetchNotes() {
-        dataService.fetchAllNotes()
+    func onAppear() {
+        dataService
+            .notesPublisher
+            .sink { [weak self] notes in
+            self?.notes = notes
+        }
+        .store(in: &cancellables)
+        
+        dataService
+            .fetchAllNotes()
             .receive(on: DispatchQueue.main)
-            .sink { result in
-            switch result {
-            case .finished: break
-            case .failure(_): break
-            }
-        } receiveValue: { [self] notes in
-            self.notes = notes
-            log(notes)
+            .sink { _ in } receiveValue: { [weak self] notes in
+            self?.notes = notes
         }
         .store(in: &cancellables)
     }
