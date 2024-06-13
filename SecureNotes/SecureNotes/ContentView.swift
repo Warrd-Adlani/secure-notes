@@ -14,7 +14,7 @@ struct ContentView: View {
     @EnvironmentObject var coordinator: AppCoordinator
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 switch coordinator.currentView {
                 case .splash:
@@ -37,7 +37,8 @@ struct ContentView: View {
                 }
             }
         }
-        .onAppear() {
+        .navigationViewStyle(StackNavigationViewStyle())
+        .task {
             DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                 withAnimation {
                     coordinator.showSignIn()
