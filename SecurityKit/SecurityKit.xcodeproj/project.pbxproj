@@ -12,6 +12,7 @@
 		F3F1BF2B2C1B299D00381E03 /* SecurityKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BF2A2C1B299D00381E03 /* SecurityKitTests.swift */; };
 		F3F1BF2C2C1B299D00381E03 /* SecurityKit.h in Headers */ = {isa = PBXBuildFile; fileRef = F3F1BF1E2C1B299C00381E03 /* SecurityKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F3F1BF362C1B29B300381E03 /* AuthenticationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BF352C1B29B300381E03 /* AuthenticationServices.swift */; };
+		F3F1BF3C2C1B2B3E00381E03 /* UtilityKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3F1BF3B2C1B2B3E00381E03 /* UtilityKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +32,7 @@
 		F3F1BF252C1B299D00381E03 /* SecurityKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SecurityKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3F1BF2A2C1B299D00381E03 /* SecurityKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityKitTests.swift; sourceTree = "<group>"; };
 		F3F1BF352C1B29B300381E03 /* AuthenticationServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationServices.swift; sourceTree = "<group>"; };
+		F3F1BF3B2C1B2B3E00381E03 /* UtilityKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UtilityKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3F1BF3C2C1B2B3E00381E03 /* UtilityKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +61,7 @@
 				F3F1BF1D2C1B299C00381E03 /* SecurityKit */,
 				F3F1BF292C1B299D00381E03 /* SecurityKitTests */,
 				F3F1BF1C2C1B299C00381E03 /* Products */,
+				F3F1BF3A2C1B2B3E00381E03 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,6 +90,14 @@
 				F3F1BF2A2C1B299D00381E03 /* SecurityKitTests.swift */,
 			);
 			path = SecurityKitTests;
+			sourceTree = "<group>";
+		};
+		F3F1BF3A2C1B2B3E00381E03 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F3F1BF3B2C1B2B3E00381E03 /* UtilityKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
