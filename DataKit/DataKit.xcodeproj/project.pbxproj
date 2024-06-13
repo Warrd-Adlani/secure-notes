@@ -17,7 +17,7 @@
 		F3F1BEFA2C1A19FD00381E03 /* SecureNotes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BEF82C1A19FD00381E03 /* SecureNotes.xcdatamodeld */; };
 		F3F1BEFC2C1A215300381E03 /* DataServiceProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BEFB2C1A215300381E03 /* DataServiceProtocols.swift */; };
 		F3F1BF022C1A23EC00381E03 /* DomainKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3F1BF012C1A23EC00381E03 /* DomainKit.framework */; };
-		F3F1BF062C1A27F200381E03 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BF052C1A27F200381E03 /* Constants.swift */; };
+		F3F1BF062C1A27F200381E03 /* StorageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BF052C1A27F200381E03 /* StorageType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +42,7 @@
 		F3F1BEF92C1A19FD00381E03 /* SecureNotes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SecureNotes.xcdatamodel; sourceTree = "<group>"; };
 		F3F1BEFB2C1A215300381E03 /* DataServiceProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataServiceProtocols.swift; sourceTree = "<group>"; };
 		F3F1BF012C1A23EC00381E03 /* DomainKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DomainKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F3F1BF052C1A27F200381E03 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F3F1BF052C1A27F200381E03 /* StorageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				F3F1BDD72C19029B00381E03 /* DataKit.h */,
-				F3F1BF052C1A27F200381E03 /* Constants.swift */,
+				F3F1BF052C1A27F200381E03 /* StorageType.swift */,
 				F3F1BEFB2C1A215300381E03 /* DataServiceProtocols.swift */,
 				F3F1BE662C1919CC00381E03 /* CoreDataService.swift */,
 				F3F1BE382C19030D00381E03 /* DataService.swift */,
@@ -230,7 +230,7 @@
 				F3F1BEFC2C1A215300381E03 /* DataServiceProtocols.swift in Sources */,
 				F3F1BDD92C19029B00381E03 /* DataKit.docc in Sources */,
 				F3F1BE392C19030D00381E03 /* DataService.swift in Sources */,
-				F3F1BF062C1A27F200381E03 /* Constants.swift in Sources */,
+				F3F1BF062C1A27F200381E03 /* StorageType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

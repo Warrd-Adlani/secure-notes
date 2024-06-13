@@ -8,6 +8,7 @@
 import Foundation
 
 public let isRunningUITests = ProcessInfo.processInfo.arguments.contains("isRunningUITests")
+public let isRunningUnitTests: Bool = ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil
 public var isDebug: Bool {
     #if DEBUG
     print("Debugging enabled")
