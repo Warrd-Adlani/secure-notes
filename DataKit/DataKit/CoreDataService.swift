@@ -17,6 +17,14 @@ internal final class CoreDataService: NSObject, StoreService {
             fatalError("Error initializing mom from: \(modelURL)")
         }
         let container = NSPersistentContainer(name: modelName, managedObjectModel: mom)
+        
+        if isRunningUnitTests {
+            let description = NSPersistentStoreDescription()
+            description.type = NSInMemoryStoreType
+            container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
+            container.persistentStoreDescriptions = [description]
+        }
+        
         container.loadPersistentStores { description, error in
             if let error = error as NSError? {
                 fatalError("Core Data failed to load: \(error.localizedDescription)")

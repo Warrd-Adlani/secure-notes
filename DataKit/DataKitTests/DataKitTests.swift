@@ -125,4 +125,44 @@ final class DataKitTests: XCTestCase {
         
         waitForExpectations(timeout: 4)
     }
+    
+    func test_Given_Two_Notes_Added_Then_Two_Notes_Should_Exist_In_List() {
+        let content1 = "Test note content 1"
+        let title1 = "Test note title 1"
+        
+        let content2 = "Test note content 2"
+        let title2 = "Test note title 2"
+        
+        var note1: Note? = nil
+        var note2: Note? = nil
+        
+        var notes: [Note] = []
+        
+        let dataService = DataService(storageTech: .coreData)
+        let expectation = expectation(description: "fetch-results-note-expectation")
+        
+        dataService.notesPublisher.sink { [self] storedNotes in
+            notes = storedNotes
+        }
+        .store(in: &cancellables)
+        
+        dataService.saveNote(with: title1, and: content1)
+            .sink { _ in } receiveValue: { savedNote in
+                note1 = savedNote
+            }
+            .store(in: &cancellables)
+        
+      dataService.saveNote(with: title2, and: content2)
+            .sink { _ in } receiveValue: { savedNote in
+                note2 = savedNote
+            }
+        .store(in: &cancellables)
+        
+        queue.asyncAfter(deadline: .now() + 2) {
+            XCTAssertEqual(notes.count, 2)
+            expectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 4)
+    }
 }
