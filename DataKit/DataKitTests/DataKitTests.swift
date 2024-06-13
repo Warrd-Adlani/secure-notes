@@ -63,7 +63,7 @@ final class DataKitTests: XCTestCase {
                 XCTAssertEqual(note!.title!, title2)
                 XCTAssertEqual(note!.content!, content2)
                 
-                XCTAssertNotEqual(note!.content!, content2 + "Y")
+                XCTAssertNotEqual(note!.title!, title2 + "X")
                 XCTAssertNotEqual(note!.content!, content2 + "Y")
                 expectation.fulfill()
             }
