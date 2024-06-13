@@ -28,7 +28,7 @@ enum NoteViewAlert {
     }
 }
 
-class NoteViewModel: NoteViewModelProtocol {
+class NoteViewModel<Coordinator: AppCoordinatorProtocol>: NoteViewModelProtocol {
     @Published var noteTitle: String = "New note"
     @Published var noteContent: String = ""
     @Published var alert: NoteViewAlert? {
@@ -40,15 +40,18 @@ class NoteViewModel: NoteViewModelProtocol {
     @Published var deleteEnabled: Bool = true
     
     var delegate: NoteViewModelDelegate? = nil
+    private let coordinator: Coordinator
+
     
     private var note: Note?
     
     private let dataService: DataServiceProtocol
     private var cancellables = Set<AnyCancellable>()
     
-    required init(note: Note?, dataService: DataServiceProtocol) {
+    required init(note: Note?, coordinator: Coordinator, dataService: DataServiceProtocol) {
         self.note = note
         self.dataService = dataService
+        self.coordinator = coordinator
     }
     
     func set(delegate: NoteViewModelDelegate) {
@@ -127,6 +130,6 @@ class NoteViewModel: NoteViewModelProtocol {
 
 extension NoteViewModel {
     static var mock: NoteViewModel {
-        return Self(note: nil, dataService: DataService(storageTech: .coreData))
+        return Self(note: nil, coordinator: AppCoordinator() as! Coordinator, dataService: DataService(storageTech: .coreData))
     }
 }

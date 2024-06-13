@@ -13,7 +13,7 @@ protocol NoteViewModelDelegate {
     func didDeleteNote()
 }
 
-protocol NoteViewModelProtocol: ObservableObject {
+protocol NoteViewModelProtocol: ViewModelling {
     
     // Variables
     var noteTitle: String { get set }
@@ -23,7 +23,7 @@ protocol NoteViewModelProtocol: ObservableObject {
     var delegate: NoteViewModelDelegate? { get set }
     var deleteEnabled: Bool { get set }
     
-    init(note: Note?, dataService: DataServiceProtocol)
+    init(note: Note?, coordinator: Coordinator, dataService: DataServiceProtocol)
     
     // View methods
     func onAppear()

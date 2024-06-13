@@ -39,6 +39,7 @@
 		F3F1BF402C1B2DB800381E03 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BF3F2C1B2DB800381E03 /* AppCoordinator.swift */; };
 		F3F1BF422C1B2E0000381E03 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BF412C1B2E0000381E03 /* SignInViewModel.swift */; };
 		F3F1BF452C1B2E9100381E03 /* AppCoordinatorProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BF442C1B2E9100381E03 /* AppCoordinatorProtocols.swift */; };
+		F3F1BF472C1B359300381E03 /* ViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BF462C1B359300381E03 /* ViewProtocols.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,7 @@
 		F3F1BF3F2C1B2DB800381E03 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		F3F1BF412C1B2E0000381E03 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		F3F1BF442C1B2E9100381E03 /* AppCoordinatorProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorProtocols.swift; sourceTree = "<group>"; };
+		F3F1BF462C1B359300381E03 /* ViewProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewProtocols.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 				F3F1BE5B2C19045C00381E03 /* AppState.swift */,
 				F3F1BD702C19022800381E03 /* SecureNotesApp.swift */,
 				F3F1BD722C19022800381E03 /* ContentView.swift */,
+				F3F1BF462C1B359300381E03 /* ViewProtocols.swift */,
 				F3F1BF432C1B2E8400381E03 /* Coordinator */,
 				F3F1BEB62C19E5F400381E03 /* SplashScreenView */,
 				F3F1BEB72C19E60200381E03 /* SignInView */,
@@ -408,6 +411,7 @@
 				F3F1BE572C19039100381E03 /* NoteView.swift in Sources */,
 				F3F1BE592C19039100381E03 /* NotesViewProtocols.swift in Sources */,
 				F3F1BEB32C19E4C500381E03 /* SignInView.swift in Sources */,
+				F3F1BF472C1B359300381E03 /* ViewProtocols.swift in Sources */,
 				F3F1BE502C19036D00381E03 /* NotesListViewProtocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

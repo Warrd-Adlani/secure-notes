@@ -7,8 +7,7 @@
 
 import Foundation
 
-protocol SignInViewModelProtocol: ObservableObject {
-    associatedtype Coordinator: AppCoordinatorProtocol
+protocol SignInViewModelProtocol: ViewModelling {
     init(coordinator: Coordinator)
     func signIn()
 }

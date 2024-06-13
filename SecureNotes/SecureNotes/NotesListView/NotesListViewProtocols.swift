@@ -9,8 +9,7 @@ import Foundation
 import SwiftUI
 import DataKit
 
-protocol NotesListViewModelProtocol: ObservableObject {
-    associatedtype Coordinator: AppCoordinatorProtocol
+protocol NotesListViewModelProtocol: ViewModelling {
     // Properties
     var notes: [Note] { get set }
     var dataService: DataService { get }
