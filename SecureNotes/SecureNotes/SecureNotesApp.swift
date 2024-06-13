@@ -6,16 +6,18 @@
 //
 
 import SwiftUI
+import DataKit
 
 @main
 struct SecureNotesApp: App {
-//    let persistenceController = PersistenceController.shared
 
+    @StateObject private var coordinator = AppCoordinator(dataService: DataService(storageTech: .coreData))
+    @StateObject private var appSatete = AppState()
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(AppState())
-//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environmentObject(appSatete)
+                .environmentObject(coordinator)
         }
     }
 }

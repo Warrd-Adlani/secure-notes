@@ -36,6 +36,9 @@
 		F3F1BF0A2C1A3E0C00381E03 /* NoteListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BF092C1A3E0C00381E03 /* NoteListViewCell.swift */; };
 		F3F1BF382C1B29F000381E03 /* SecurityKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3F1BF372C1B29F000381E03 /* SecurityKit.framework */; };
 		F3F1BF392C1B29F000381E03 /* SecurityKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F3F1BF372C1B29F000381E03 /* SecurityKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F3F1BF402C1B2DB800381E03 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BF3F2C1B2DB800381E03 /* AppCoordinator.swift */; };
+		F3F1BF422C1B2E0000381E03 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BF412C1B2E0000381E03 /* SignInViewModel.swift */; };
+		F3F1BF452C1B2E9100381E03 /* AppCoordinatorProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BF442C1B2E9100381E03 /* AppCoordinatorProtocols.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +104,9 @@
 		F3F1BEB22C19E4C500381E03 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		F3F1BF092C1A3E0C00381E03 /* NoteListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListViewCell.swift; sourceTree = "<group>"; };
 		F3F1BF372C1B29F000381E03 /* SecurityKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SecurityKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3F1BF3F2C1B2DB800381E03 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		F3F1BF412C1B2E0000381E03 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		F3F1BF442C1B2E9100381E03 /* AppCoordinatorProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorProtocols.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,10 +167,11 @@
 				F3F1BE5B2C19045C00381E03 /* AppState.swift */,
 				F3F1BD702C19022800381E03 /* SecureNotesApp.swift */,
 				F3F1BD722C19022800381E03 /* ContentView.swift */,
+				F3F1BF432C1B2E8400381E03 /* Coordinator */,
 				F3F1BEB62C19E5F400381E03 /* SplashScreenView */,
 				F3F1BEB72C19E60200381E03 /* SignInView */,
-				F3F1BE5A2C19039900381E03 /* NotesView */,
 				F3F1BE532C19038700381E03 /* NotesListView */,
+				F3F1BE5A2C19039900381E03 /* NotesView */,
 				F3F1BD762C19022900381E03 /* Preview Content */,
 				F3F1BD742C19022900381E03 /* Assets.xcassets */,
 			);
@@ -241,9 +248,19 @@
 		F3F1BEB72C19E60200381E03 /* SignInView */ = {
 			isa = PBXGroup;
 			children = (
+				F3F1BF412C1B2E0000381E03 /* SignInViewModel.swift */,
 				F3F1BEB22C19E4C500381E03 /* SignInView.swift */,
 			);
 			path = SignInView;
+			sourceTree = "<group>";
+		};
+		F3F1BF432C1B2E8400381E03 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				F3F1BF442C1B2E9100381E03 /* AppCoordinatorProtocols.swift */,
+				F3F1BF3F2C1B2DB800381E03 /* AppCoordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -379,12 +396,15 @@
 			files = (
 				F3F1BD732C19022800381E03 /* ContentView.swift in Sources */,
 				F3F1BD712C19022800381E03 /* SecureNotesApp.swift in Sources */,
+				F3F1BF402C1B2DB800381E03 /* AppCoordinator.swift in Sources */,
 				F3F1BF0A2C1A3E0C00381E03 /* NoteListViewCell.swift in Sources */,
 				F3F1BE522C19036D00381E03 /* NotesListViewModel.swift in Sources */,
 				F3F1BE9B2C19DB4100381E03 /* SplashScreenView.swift in Sources */,
 				F3F1BE582C19039100381E03 /* NoteViewModel.swift in Sources */,
 				F3F1BE5C2C19045C00381E03 /* AppState.swift in Sources */,
+				F3F1BF422C1B2E0000381E03 /* SignInViewModel.swift in Sources */,
 				F3F1BE512C19036D00381E03 /* NotesListView.swift in Sources */,
+				F3F1BF452C1B2E9100381E03 /* AppCoordinatorProtocols.swift in Sources */,
 				F3F1BE572C19039100381E03 /* NoteView.swift in Sources */,
 				F3F1BE592C19039100381E03 /* NotesViewProtocols.swift in Sources */,
 				F3F1BEB32C19E4C500381E03 /* SignInView.swift in Sources */,

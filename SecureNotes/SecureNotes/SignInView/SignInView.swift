@@ -11,7 +11,7 @@ import SecurityKit
 
 protocol SignInViewProtocol: View {}
 
-struct SignInView: SignInViewProtocol {
+struct SignInView<Coordinator: AppCoordinatorProtocol>: SignInViewProtocol {
     @EnvironmentObject var appState: AppState
     @State private var isAuthenticated = false {
         didSet {
@@ -19,6 +19,8 @@ struct SignInView: SignInViewProtocol {
         }
     }
     @State private var showAlert = false
+    
+    @ObservedObject var viewModel: SignInViewModel<Coordinator>
     
     var body: some View {
         VStack {
@@ -51,5 +53,5 @@ struct SignInView: SignInViewProtocol {
 }
 
 #Preview {
-    SignInView()
+    SignInView(viewModel: SignInViewModel(coordinator: AppCoordinator()))
 }

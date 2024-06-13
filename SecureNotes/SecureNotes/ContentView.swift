@@ -11,22 +11,27 @@ import DataKit
 
 struct ContentView: View {
     @EnvironmentObject var appState: AppState
+    @EnvironmentObject var coordinator: AppCoordinator
     
     var body: some View {
-        VStack {
-            switch appState.screen {
-            case .splash:
-                SplashScreenView()
-            case .signIn:
-                SignInView()
-            case .notes:
-                NotesListView(viewModel: NotesListViewModel())
+        NavigationView {
+            VStack {
+                switch coordinator.currentView {
+                case .splash:
+                    SplashScreenView()
+                case .signIn:
+                    SignInView(viewModel: SignInViewModel(coordinator: coordinator))
+                case .notesList:
+                    NotesListView(viewModel: NotesListViewModel())
+                case .note(let note):
+                    NoteView(viewModel: NoteViewModel(note: note, dataService: DataService(storageTech: .coreData)))
+                }
             }
         }
         .onAppear() {
             DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                 withAnimation {
-                    self.appState.screen = .signIn
+                    coordinator.showSignIn()
                 }
             }
         }
