@@ -15,6 +15,7 @@ public protocol StoreService {
     func fetchNote(with id: UUID)-> Note?
     func updateNote(with id: UUID, title: String, and content: String) -> Future<Bool, Error>
     func fetchAllNotes() -> Future<[Note], Error>
+    func deleteAll()
 }
 
 public protocol DataServiceProtocol: StoreService {

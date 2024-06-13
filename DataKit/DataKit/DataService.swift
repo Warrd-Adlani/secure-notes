@@ -49,4 +49,8 @@ public final class DataService: DataServiceProtocol {
     public func fetchAllNotes() -> Future<[Note], Error> {
         return storeService.fetchAllNotes()
     }
+    
+    public func deleteAll() {
+        storeService.deleteAll()
+    }
 }

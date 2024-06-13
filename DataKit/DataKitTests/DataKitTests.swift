@@ -140,8 +140,8 @@ final class DataKitTests: XCTestCase {
         
         let dataService = DataService(storageTech: .coreData)
         let expectation = expectation(description: "fetch-results-note-expectation")
-        
-        dataService.notesPublisher.sink { [self] storedNotes in
+        dataService.deleteAll()
+        dataService.notesPublisher.sink { storedNotes in
             notes = storedNotes
         }
         .store(in: &cancellables)
@@ -152,11 +152,11 @@ final class DataKitTests: XCTestCase {
             }
             .store(in: &cancellables)
         
-      dataService.saveNote(with: title2, and: content2)
+        dataService.saveNote(with: title2, and: content2)
             .sink { _ in } receiveValue: { savedNote in
                 note2 = savedNote
             }
-        .store(in: &cancellables)
+            .store(in: &cancellables)
         
         queue.asyncAfter(deadline: .now() + 2) {
             XCTAssertEqual(notes.count, 2)

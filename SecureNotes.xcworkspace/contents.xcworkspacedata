@@ -22,4 +22,10 @@
    <FileRef
       location = "group:SecureNotes/SecureNotes.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:SecureNotes/SecureNotes/NotesTestSuit.xctestplan">
+   </FileRef>
+   <FileRef
+      location = "group:README.md">
+   </FileRef>
 </Workspace>

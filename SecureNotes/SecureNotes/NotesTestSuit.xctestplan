@@ -1,0 +1,66 @@
+{
+  "configurations" : [
+    {
+      "id" : "54E1323C-4647-4331-B5EE-C52996453DBE",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:..\/DataKit\/DataKit.xcodeproj",
+        "identifier" : "F3F1BDDD2C19029C00381E03",
+        "name" : "DataKitTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:..\/DomainKit\/DomainKit.xcodeproj",
+        "identifier" : "F3F1BE012C1902B500381E03",
+        "name" : "DomainKitTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:..\/PresentationKit\/PresentationKit.xcodeproj",
+        "identifier" : "F3F1BE272C1902F800381E03",
+        "name" : "PresentationKitTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:..\/ResourceKit\/ResourceKit.xcodeproj",
+        "identifier" : "F3F1BE852C19DA6F00381E03",
+        "name" : "ResourceKitTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:SecureNotes.xcodeproj",
+        "identifier" : "F3F1BD812C19022A00381E03",
+        "name" : "SecureNotesTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:..\/SecurityKit\/SecurityKit.xcodeproj",
+        "identifier" : "F3F1BF242C1B299D00381E03",
+        "name" : "SecurityKitTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:..\/UtilityKit\/UtilityKit.xcodeproj",
+        "identifier" : "F3F1BDB22C19024A00381E03",
+        "name" : "UtilityKitTests"
+      }
+    }
+  ],
+  "version" : 1
+}
