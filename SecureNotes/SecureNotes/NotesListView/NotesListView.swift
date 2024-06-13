@@ -34,6 +34,9 @@ struct NotesListView<ViewModel: NotesListViewModelProtocol>: NotesListViewProtoc
             .padding(.top, 10)
             .navigationTitle("Your notes")
             .toolbar(content: {
+                NavigationLink(destination: NoteView(viewModel: NoteViewModel(note: nil, dataService: DataService(storageTech: .coreData)))) {
+                    Text("New note")
+                }
                 NavigationLink {
                     NoteView(viewModel: NoteViewModel(note: nil, dataService: DataService(storageTech: .coreData)))
                 } label: {

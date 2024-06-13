@@ -123,7 +123,6 @@ class NoteViewModel: NoteViewModelProtocol {
                 }}, receiveValue: { _ in})
             .store(in: &cancellables)
     }
-    func readNote(for id: String) {}
 }
 
 extension NoteViewModel {

@@ -120,7 +120,6 @@ internal final class CoreDataService: NSObject, StoreService {
         }
     }
     
-
     func fetchNote(with id: UUID) -> Note? {
         let fetchRequest: NSFetchRequest<Note> = Note.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
