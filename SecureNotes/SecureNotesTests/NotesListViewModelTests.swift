@@ -48,11 +48,11 @@ final class NotesListViewModelTests: XCTestCase {
         _ = dataService.saveNote(with: "Mock Title 1", and: "Mock content 1")
         _ = dataService.saveNote(with: "Mock Title 2", and: "Mock content 2")
         
+        let deletedNoteID = viewModel.notes.first?.id!
         viewModel.delete(note: viewModel.notes.first!)
         
-
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            XCTAssertEqual(viewModel.notes.count, 1)
+            XCTAssertTrue(viewModel.notes.filter {$0.id == deletedNoteID}.isEmpty)
             expectation.fulfill()
         }
         
@@ -62,7 +62,6 @@ final class NotesListViewModelTests: XCTestCase {
     func test_Given_Note_Selected_Then_Show_Note() {
         let coordinator = AppCoordinator()
         let dataService = DataService(storageTech: .coreData)
-        var cancellables = Set<AnyCancellable>()
         let viewModel = NotesListViewModel(coordinator: coordinator, dataService: dataService)
         let expectation = expectation(description: "show-note-expectation")
         let mockTitle = "Mock Title 1"
