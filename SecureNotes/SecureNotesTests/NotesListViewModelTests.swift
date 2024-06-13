@@ -41,23 +41,18 @@ final class NotesListViewModelTests: XCTestCase {
     func test_Given_User_Taps_Delete_Then_Delete_Note() {
         let coordinator = AppCoordinator()
         let dataService = DataService(storageTech: .coreData)
-        var cancellables = Set<AnyCancellable>()
         let viewModel = NotesListViewModel(coordinator: coordinator, dataService: dataService)
         let expectation = expectation(description: "delete-note-expectation")
-        var deleted = false
         viewModel.onAppear()
         
         _ = dataService.saveNote(with: "Mock Title 1", and: "Mock content 1")
         _ = dataService.saveNote(with: "Mock Title 2", and: "Mock content 2")
         
-        _ = dataService.removeNote(with: viewModel.notes.first!.id!).sink(receiveCompletion: { _ in }, receiveValue: { result in
-            deleted = result
-        })
+        viewModel.delete(note: viewModel.notes.first!)
         
-        XCTAssertEqual(viewModel.notes.count, 1)
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            XCTAssertTrue(deleted)
+            XCTAssertEqual(viewModel.notes.count, 1)
             expectation.fulfill()
         }
         
