@@ -38,37 +38,31 @@ final class SecureNotesViewModelTests: XCTestCase {
     }
 
 
-//    func test_Given_User_Taps_Delete_Then_Delete_Note() {
-//        let coordinator = AppCoordinator()
-//        let dataService = DataService(storageTech: .coreData)
-//        var cancellables = Set<AnyCancellable>()
-//        let viewModel = NotesListViewModel(coordinator: coordinator, dataService: dataService)
-//        let expectation = expectation(description: "delete-note-expectation")
-//        var notes: [Note]?
-//        var deleted = false
-//        viewModel.onAppear()
-//        
-//        _ = dataService.saveNote(with: "Mock Title 1", and: "Mock content 1")
-//        _ = dataService.saveNote(with: "Mock Title 2", and: "Mock content 2")
-//        _ = dataService.notesPublisher.sink { savedNotes in
-//            notes = savedNotes
-//        }
-//        
-//        let id = notes?.first?.id
-//        print("id", id)
-//        _ = dataService.removeNote(with: id).sink(receiveCompletion: { _ in }, receiveValue: { result in
-//            deleted = result
-//        })
-//        
-//        
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-//            XCTAssertTrue(deleted)
-//            print(viewModel.notes)
-//            expectation.fulfill()
-//        }
-//        
-//        waitForExpectations(timeout: 3)
-//    }
+    func test_Given_User_Taps_Delete_Then_Delete_Note() {
+        let coordinator = AppCoordinator()
+        let dataService = DataService(storageTech: .coreData)
+        var cancellables = Set<AnyCancellable>()
+        let viewModel = NotesListViewModel(coordinator: coordinator, dataService: dataService)
+        let expectation = expectation(description: "delete-note-expectation")
+        var deleted = false
+        viewModel.onAppear()
+        
+        _ = dataService.saveNote(with: "Mock Title 1", and: "Mock content 1")
+        _ = dataService.saveNote(with: "Mock Title 2", and: "Mock content 2")
+        
+        _ = dataService.removeNote(with: viewModel.notes.first!.id!).sink(receiveCompletion: { _ in }, receiveValue: { result in
+            deleted = result
+        })
+        
+        XCTAssertEqual(viewModel.notes.count, 1)
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            XCTAssertTrue(deleted)
+            expectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 0.2)
+    }
     
     func test_Given_Note_Selected_Then_Show_Note() {
         let coordinator = AppCoordinator()
@@ -76,27 +70,30 @@ final class SecureNotesViewModelTests: XCTestCase {
         var cancellables = Set<AnyCancellable>()
         let viewModel = NotesListViewModel(coordinator: coordinator, dataService: dataService)
         let expectation = expectation(description: "show-note-expectation")
-        var notes: [Note]?
-        var deleted = false
-
-        dataService.notesPublisher.sink { savedNotes in
-            notes = savedNotes
-        }
-        .store(in: &cancellables)
+        let mockTitle = "Mock Title 1"
+        let mockContent = "Mock content 1"
+        viewModel.onAppear()
         
-        _ = dataService.saveNote(with: "Mock Title 1", and: "Mock content 1")
-        _ = dataService.removeNote(with: notes?.first?.id ?? UUID()).sink(receiveCompletion: { _ in }, receiveValue: { result in
-            deleted = result
-        })
+        _ = dataService.saveNote(with: mockTitle, and: mockContent)
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            XCTAssertNotNil(notes)
-            XCTAssertTrue(notes!.count == 1)
-            XCTAssertTrue(deleted)
+        XCTAssertNotNil(viewModel.notes.first)
+        XCTAssertEqual(viewModel.notes.first!.title, mockTitle)
+        XCTAssertEqual(viewModel.notes.first!.content, mockContent)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             expectation.fulfill()
         }
         
-        waitForExpectations(timeout: 3)
+        waitForExpectations(timeout: 0.2)
+    }
+    
+    func test_Given_User_Taps_New_Note_Then_Create_New_Note_View() {
+        let coordinator = AppCoordinator()
+        let dataService = DataService(storageTech: .coreData)
+        let viewModel = NotesListViewModel(coordinator: coordinator, dataService: dataService)
+        
+        viewModel.newNote()
+        
+        XCTAssertTrue(coordinator.currentView == .note(note: nil))
     }
     
 //    func delete(note: Note)
