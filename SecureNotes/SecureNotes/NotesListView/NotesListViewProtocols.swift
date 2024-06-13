@@ -20,8 +20,9 @@ protocol NotesListViewModelProtocol: ViewModelling {
     func onAppear()
     
     // Note methods
-    func deleteNote(_ note: Note)
-    func selectNote(_ note: Note) 
+    func delete(note: Note)
+    func show(note: Note?) 
+    func newNote()
 }
 
 protocol NotesListViewProtocol: View {}

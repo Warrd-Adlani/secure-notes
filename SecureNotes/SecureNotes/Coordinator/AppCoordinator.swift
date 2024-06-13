@@ -16,7 +16,7 @@ class AppCoordinator: AppCoordinatorProtocol {
         case splash
         case signIn
         case notesList
-        case note(note: Note)
+        case note(note: Note?)
     }
     
     func showSplash() {
@@ -31,7 +31,11 @@ class AppCoordinator: AppCoordinatorProtocol {
         currentView = .notesList
     }
     
-    func showNote(note: Note) {
+    func show(note: Note?) {
         currentView = .note(note: note)
+    }
+    
+    func newNote() {
+        currentView = .note(note: nil)
     }
 }

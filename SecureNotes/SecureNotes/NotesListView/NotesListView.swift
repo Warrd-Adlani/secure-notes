@@ -20,13 +20,14 @@ struct NotesListView<ViewModel: NotesListViewModelProtocol>: NotesListViewProtoc
             VStack {
                 List {
                     ForEach(viewModel.notes) { note in
-                        NavigationLink(destination: NoteView(viewModel: NoteViewModel(note: note, dataService: DataService(storageTech: .coreData)))) {
                             NoteListViewCell(title: note.title ?? "", timestamp: note.timestamp ?? Date())
-                        }
+                            .onTapGesture {
+                                viewModel.show(note: note)
+                            }
                     }
                     .onDelete(perform: { indexSet in
                         indexSet.map { viewModel.notes[$0] }.forEach { note in
-                            viewModel.deleteNote(note)
+                            viewModel.delete(note: note)
                         }
                     })
                 }
@@ -34,11 +35,8 @@ struct NotesListView<ViewModel: NotesListViewModelProtocol>: NotesListViewProtoc
             .padding(.top, 10)
             .navigationTitle("Your notes")
             .toolbar(content: {
-                NavigationLink(destination: NoteView(viewModel: NoteViewModel(note: nil, dataService: DataService(storageTech: .coreData)))) {
-                    Text("New note")
-                }
-                NavigationLink {
-                    NoteView(viewModel: NoteViewModel(note: nil, dataService: DataService(storageTech: .coreData)))
+                Button {
+                    viewModel.show(note: nil)
                 } label: {
                     Text("New note")
                 }

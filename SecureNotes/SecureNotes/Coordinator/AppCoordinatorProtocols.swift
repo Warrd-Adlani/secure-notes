@@ -11,5 +11,6 @@ import DataKit
 protocol AppCoordinatorProtocol: ObservableObject {
     func showSignIn()
     func showNotesList()
-    func showNote(note: Note)
+    func show(note: Note?)
+    func newNote()
 }

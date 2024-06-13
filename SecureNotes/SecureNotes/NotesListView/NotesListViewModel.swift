@@ -40,7 +40,7 @@ final class NotesListViewModel<Coordinator: AppCoordinatorProtocol>: NotesListVi
         .store(in: &cancellables)
     }
     
-    func deleteNote(_ note: Note) {
+    func delete(note: Note) {
         guard
             let id = note.id
         else {
@@ -56,8 +56,12 @@ final class NotesListViewModel<Coordinator: AppCoordinatorProtocol>: NotesListVi
             .store(in: &cancellables)
     }
     
-    func selectNote(_ note: Note) {
-        coordinator.showNote(note: note)
+    func show(note: Note?) {
+        coordinator.show(note: note)
+    }
+    
+    func newNote() {
+        coordinator.show(note: nil)
     }
 }
 
