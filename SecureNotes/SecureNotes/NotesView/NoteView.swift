@@ -9,64 +9,92 @@ import SwiftUI
 import DataKit
 
 struct NoteView<ViewModel: NoteViewModelProtocol>: NoteViewProtocol {
-    
     @ObservedObject var viewModel: ViewModel
-    @Environment (\.dismiss) var dismiss
 
     init(viewModel: ViewModel) {
         self.viewModel = viewModel
     }
     
     var body: some View {
-        VStack {
-            Group {
-                TextField(text: $viewModel.noteTitle) {
-                    Text("")
+        ZStack {
+            VStack {
+                Group {
+                    TextField(text: $viewModel.noteTitle) {
+                        Text("")
+                    }
+                    
+                    TextEditor(text: $viewModel.noteContent)
+                        .lineSpacing(10)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(.black.opacity(0.1), lineWidth: 0.5)
+                        )
                 }
-                
-                TextEditor(text: $viewModel.noteContent)
-                    .lineSpacing(10)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(.black.opacity(0.1), lineWidth: 0.5)
-                    )
+                .autocapitalization(.words)
+                .textFieldStyle(.roundedBorder)
+                .disableAutocorrection(true)
             }
-            .autocapitalization(.words)
-            .textFieldStyle(.roundedBorder)
-            .disableAutocorrection(true)
+            .ignoresSafeArea()
+            .padding()
+            
+            if viewModel.showToast {
+                noteToastView()
+                    .ignoresSafeArea()
+            }
         }
-        .alert(isPresented: $viewModel.showAlert, content: {
-            Alert(title: Text(viewModel.alert?.alert?.title ?? ""))
-        })
-        .padding()
         .toolbar(content: {
-            HStack {
-                Button {
-                    viewModel.deleteNote()
-                } label: {
-                    Text("Delete note")
-                }
-                .disabled(viewModel.deleteEnabled)
-                
-                Spacer()
-                
-                Button {
-                    viewModel.saveNote()
-                } label: {
-                    Text("Save note")
-                }
-            }
+            noteToolBarView()
         })
         .onAppear {
-            viewModel.set(delegate: self)
             viewModel.onAppear()
         }
     }
-}
-
-extension NoteView: NoteViewModelDelegate {
-    func didDeleteNote() {
-        dismiss.callAsFunction()
+    
+    fileprivate func noteToolBarView() -> HStack<TupleView<(Button<Text>, Spacer, some View, Spacer, Button<Text>)>> {
+        return HStack {
+            Button {
+                viewModel.close()
+            } label: {
+                Text("Close")
+            }
+            
+            Spacer()
+            
+            Button {
+                viewModel.deleteNote()
+            } label: {
+                Text("Delete note")
+            }
+            .disabled(viewModel.deleteEnabled)
+            
+            Spacer()
+            
+            Button {
+                viewModel.saveNote()
+            } label: {
+                Text("Save note")
+            }
+        }
+    }
+    
+    
+    fileprivate func noteToastView() -> VStack<TupleView<(Spacer, some View)>> {
+        return VStack {
+            Spacer()
+            VStack {
+                Text(viewModel.toastMessage)
+                    .font(.headline)
+                    .padding()
+                Spacer()
+            }
+            .frame(maxWidth: .infinity)
+            .frame(height: 100)
+            .background(.mint.opacity(0.3))
+            .onTapGesture {
+                viewModel.showToast.toggle()
+            }
+            .transition(.move(edge: .bottom))
+        }
     }
 }
 

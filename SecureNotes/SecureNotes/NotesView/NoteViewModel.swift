@@ -8,40 +8,21 @@
 import Foundation
 import Combine
 import DataKit
+import DomainKit
 
-struct AlertItem {
-    let title: String
-    let body: String
-}
-
-enum NoteViewAlert {
-    case saved
-    case updated
-    
-    var alert: AlertItem? {
-        switch self {
-        case .saved:
-            return AlertItem(title: "Saved", body: "")
-        case .updated:
-            return AlertItem(title: "Updated", body: "")
-        }
-    }
+enum NoteToastType: String {
+    case saved = "Note saved"
+    case updated = "Note updated"
 }
 
 class NoteViewModel<Coordinator: AppCoordinatorProtocol>: NoteViewModelProtocol {
     @Published var noteTitle: String = "New note"
-    @Published var noteContent: String = ""
-    @Published var alert: NoteViewAlert? {
-        didSet {
-            showAlert = true
-        }
-    }
-    @Published var showAlert = false
+    @Published var noteContent: String = "Test toast"
     @Published var deleteEnabled: Bool = true
+    @Published var showToast: Bool = false
+    var toastMessage: String = ""
     
-    var delegate: NoteViewModelDelegate? = nil
     private let coordinator: Coordinator
-
     
     private var note: Note?
     
@@ -52,10 +33,6 @@ class NoteViewModel<Coordinator: AppCoordinatorProtocol>: NoteViewModelProtocol 
         self.note = note
         self.dataService = dataService
         self.coordinator = coordinator
-    }
-    
-    func set(delegate: NoteViewModelDelegate) {
-        self.delegate = delegate
     }
     
     func onAppear() {
@@ -78,7 +55,7 @@ class NoteViewModel<Coordinator: AppCoordinatorProtocol>: NoteViewModelProtocol 
             .sink(receiveCompletion: { [weak self] result in
                 switch result {
                 case .finished:
-                    self?.alert = .saved
+                    self?.shouldShowToast(for: .saved)
                 case .failure(_):
                     break
                 }}, receiveValue: { [self] note in
@@ -86,6 +63,15 @@ class NoteViewModel<Coordinator: AppCoordinatorProtocol>: NoteViewModelProtocol 
                     deleteEnabled = true
                 })
             .store(in: &cancellables)
+    }
+    
+    private func shouldShowToast(for type: NoteToastType) {
+        showToast = true
+        toastMessage = type.rawValue
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
+            self?.showToast = false
+            self?.toastMessage = ""
+        }
     }
     
     func updateNote() {
@@ -101,11 +87,15 @@ class NoteViewModel<Coordinator: AppCoordinatorProtocol>: NoteViewModelProtocol 
             .sink(receiveCompletion: { [weak self] result in
                 switch result {
                 case .finished:
-                    self?.alert = .updated
+                    self?.shouldShowToast(for: .updated)
                 case .failure(_):
                     break
                 }}, receiveValue: { _ in})
             .store(in: &cancellables)
+    }
+    
+    func close() {
+        coordinator.showNotesList()
     }
     
     func deleteNote() {
@@ -120,7 +110,7 @@ class NoteViewModel<Coordinator: AppCoordinatorProtocol>: NoteViewModelProtocol 
             .sink(receiveCompletion: { [self] result in
                 switch result {
                 case .finished:
-                    delegate?.didDeleteNote()
+                    coordinator.showNotesList()
                 case .failure(_):
                     break
                 }}, receiveValue: { _ in})

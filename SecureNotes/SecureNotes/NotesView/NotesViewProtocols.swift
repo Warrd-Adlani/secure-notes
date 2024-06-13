@@ -9,25 +9,20 @@ import Foundation
 import DataKit
 import SwiftUI
 
-protocol NoteViewModelDelegate {
-    func didDeleteNote()
-}
-
 protocol NoteViewModelProtocol: ViewModelling {
     
     // Variables
     var noteTitle: String { get set }
     var noteContent: String { get set }
-    var alert: NoteViewAlert? { get set }
-    var showAlert: Bool { get set }
-    var delegate: NoteViewModelDelegate? { get set }
     var deleteEnabled: Bool { get set }
+    var toastMessage: String { get set }
+    var showToast: Bool { get set }
     
     init(note: Note?, coordinator: Coordinator, dataService: DataServiceProtocol)
     
     // View methods
     func onAppear()
-    func set(delegate: NoteViewModelDelegate)
+    func close()
     
     // Note methods
     func saveNote()
