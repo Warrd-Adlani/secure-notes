@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F3A0026D2C1B639B00BB4669 /* NoteViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A0026C2C1B639B00BB4669 /* NoteViewModelTests.swift */; };
 		F3F1BD712C19022800381E03 /* SecureNotesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BD702C19022800381E03 /* SecureNotesApp.swift */; };
 		F3F1BD732C19022800381E03 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BD722C19022800381E03 /* ContentView.swift */; };
 		F3F1BD752C19022900381E03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3F1BD742C19022900381E03 /* Assets.xcassets */; };
@@ -40,7 +41,7 @@
 		F3F1BF452C1B2E9100381E03 /* AppCoordinatorProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BF442C1B2E9100381E03 /* AppCoordinatorProtocols.swift */; };
 		F3F1BF472C1B359300381E03 /* ViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BF462C1B359300381E03 /* ViewProtocols.swift */; };
 		F3F1BF4B2C1B534400381E03 /* NoteCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BF4A2C1B534400381E03 /* NoteCoordinatorTests.swift */; };
-		F3F1BF4D2C1B554B00381E03 /* SecureNotesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BF4C2C1B554B00381E03 /* SecureNotesViewModelTests.swift */; };
+		F3F1BF4D2C1B554B00381E03 /* NotesListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BF4C2C1B554B00381E03 /* NotesListViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F3A0026C2C1B639B00BB4669 /* NoteViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewModelTests.swift; sourceTree = "<group>"; };
 		F3F1BD6D2C19022800381E03 /* SecureNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SecureNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3F1BD702C19022800381E03 /* SecureNotesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureNotesApp.swift; sourceTree = "<group>"; };
 		F3F1BD722C19022800381E03 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -110,7 +112,7 @@
 		F3F1BF442C1B2E9100381E03 /* AppCoordinatorProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorProtocols.swift; sourceTree = "<group>"; };
 		F3F1BF462C1B359300381E03 /* ViewProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewProtocols.swift; sourceTree = "<group>"; };
 		F3F1BF4A2C1B534400381E03 /* NoteCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCoordinatorTests.swift; sourceTree = "<group>"; };
-		F3F1BF4C2C1B554B00381E03 /* SecureNotesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureNotesViewModelTests.swift; sourceTree = "<group>"; };
+		F3F1BF4C2C1B554B00381E03 /* NotesListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesListViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,7 +196,8 @@
 			isa = PBXGroup;
 			children = (
 				F3F1BD862C19022A00381E03 /* SecureNotesTests.swift */,
-				F3F1BF4C2C1B554B00381E03 /* SecureNotesViewModelTests.swift */,
+				F3F1BF4C2C1B554B00381E03 /* NotesListViewModelTests.swift */,
+				F3A0026C2C1B639B00BB4669 /* NoteViewModelTests.swift */,
 				F3F1BF4A2C1B534400381E03 /* NoteCoordinatorTests.swift */,
 			);
 			path = SecureNotesTests;
@@ -424,7 +427,8 @@
 			files = (
 				F3F1BF4B2C1B534400381E03 /* NoteCoordinatorTests.swift in Sources */,
 				F3F1BD872C19022A00381E03 /* SecureNotesTests.swift in Sources */,
-				F3F1BF4D2C1B554B00381E03 /* SecureNotesViewModelTests.swift in Sources */,
+				F3F1BF4D2C1B554B00381E03 /* NotesListViewModelTests.swift in Sources */,
+				F3A0026D2C1B639B00BB4669 /* NoteViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,5 +1,5 @@
 //
-//  SecureNotesViewModelTests.swift
+//  NotesListViewModelTests.swift
 //  SecureNotesTests
 //
 //  Created by Warrd Adlani on 13/06/2024.
@@ -11,7 +11,7 @@ import DataKit
 
 @testable import SecureNotes
 
-final class SecureNotesViewModelTests: XCTestCase {
+final class NotesListViewModelTests: XCTestCase {
 
     // Sign In VM tests
     func test_Given_Sign_In_Successful_Then_Show_Notes() {
