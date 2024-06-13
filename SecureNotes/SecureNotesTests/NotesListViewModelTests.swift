@@ -90,8 +90,4 @@ final class NotesListViewModelTests: XCTestCase {
         
         XCTAssertTrue(coordinator.currentView == .note(note: nil))
     }
-    
-//    func delete(note: Note)
-//    func show(note: Note?)
-//    func newNote()
 }
