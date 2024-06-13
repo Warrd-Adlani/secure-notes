@@ -11,13 +11,6 @@ import DataKit
 
 class AppCoordinator: AppCoordinatorProtocol {
     @Published var currentView: AppView = .splash
-
-    enum AppView {
-        case splash
-        case signIn
-        case notesList
-        case note(note: Note?)
-    }
     
     func showSplash() {
         currentView = .splash

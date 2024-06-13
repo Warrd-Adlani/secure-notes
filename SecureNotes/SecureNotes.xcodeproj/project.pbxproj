@@ -39,6 +39,8 @@
 		F3F1BF422C1B2E0000381E03 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BF412C1B2E0000381E03 /* SignInViewModel.swift */; };
 		F3F1BF452C1B2E9100381E03 /* AppCoordinatorProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BF442C1B2E9100381E03 /* AppCoordinatorProtocols.swift */; };
 		F3F1BF472C1B359300381E03 /* ViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BF462C1B359300381E03 /* ViewProtocols.swift */; };
+		F3F1BF4B2C1B534400381E03 /* NoteCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BF4A2C1B534400381E03 /* NoteCoordinatorTests.swift */; };
+		F3F1BF4D2C1B554B00381E03 /* SecureNotesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BF4C2C1B554B00381E03 /* SecureNotesViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +109,8 @@
 		F3F1BF412C1B2E0000381E03 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		F3F1BF442C1B2E9100381E03 /* AppCoordinatorProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorProtocols.swift; sourceTree = "<group>"; };
 		F3F1BF462C1B359300381E03 /* ViewProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewProtocols.swift; sourceTree = "<group>"; };
+		F3F1BF4A2C1B534400381E03 /* NoteCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCoordinatorTests.swift; sourceTree = "<group>"; };
+		F3F1BF4C2C1B554B00381E03 /* SecureNotesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureNotesViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +194,8 @@
 			isa = PBXGroup;
 			children = (
 				F3F1BD862C19022A00381E03 /* SecureNotesTests.swift */,
+				F3F1BF4C2C1B554B00381E03 /* SecureNotesViewModelTests.swift */,
+				F3F1BF4A2C1B534400381E03 /* NoteCoordinatorTests.swift */,
 			);
 			path = SecureNotesTests;
 			sourceTree = "<group>";
@@ -416,7 +422,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3F1BF4B2C1B534400381E03 /* NoteCoordinatorTests.swift in Sources */,
 				F3F1BD872C19022A00381E03 /* SecureNotesTests.swift in Sources */,
+				F3F1BF4D2C1B554B00381E03 /* SecureNotesViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

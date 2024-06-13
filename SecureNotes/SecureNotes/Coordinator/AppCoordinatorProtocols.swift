@@ -8,6 +8,13 @@
 import Foundation
 import DataKit
 
+enum AppView: Equatable {
+    case splash
+    case signIn
+    case notesList
+    case note(note: Note?)
+}
+
 protocol AppCoordinatorProtocol: ObservableObject {
     func showSignIn()
     func showNotesList()
