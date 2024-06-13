@@ -37,6 +37,9 @@ class NoteViewModel: NoteViewModelProtocol {
         }
     }
     @Published var showAlert = false
+    @Published var deleteEnabled: Bool = true
+    
+    var delegate: NoteViewModelDelegate? = nil
     
     private var note: Note?
     
@@ -48,9 +51,14 @@ class NoteViewModel: NoteViewModelProtocol {
         self.dataService = dataService
     }
     
+    func set(delegate: NoteViewModelDelegate) {
+        self.delegate = delegate
+    }
+    
     func onAppear() {
         noteTitle = note?.title ?? "New note"
         noteContent = note?.content ?? ""
+        deleteEnabled = (note == nil)
     }
     
     func saveNote() {
@@ -72,6 +80,7 @@ class NoteViewModel: NoteViewModelProtocol {
                     break
                 }}, receiveValue: { [self] note in
                     self.note = note
+                    deleteEnabled = true
                 })
             .store(in: &cancellables)
     }
@@ -105,10 +114,10 @@ class NoteViewModel: NoteViewModelProtocol {
         dataService
             .removeNote(with: id)
             .receive(on: DispatchQueue.main)
-            .sink(receiveCompletion: { result in
+            .sink(receiveCompletion: { [self] result in
                 switch result {
                 case .finished:
-                    break
+                    delegate?.didDeleteNote()
                 case .failure(_):
                     break
                 }}, receiveValue: { _ in})

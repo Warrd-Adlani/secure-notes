@@ -23,14 +23,16 @@ final class NotesListViewModel: NotesListViewModelProtocol {
     func onAppear() {}
     
     func fetchNotes() {
-        dataService.fetchAllNotes().sink { result in
+        dataService.fetchAllNotes()
+            .receive(on: DispatchQueue.main)
+            .sink { result in
             switch result {
             case .finished: break
             case .failure(_): break
             }
         } receiveValue: { [self] notes in
             self.notes = notes
-            print(notes)
+            log(notes)
         }
         .store(in: &cancellables)
     }
@@ -45,7 +47,7 @@ final class NotesListViewModel: NotesListViewModelProtocol {
         dataService.removeNote(with: id)
             .receive(on: DispatchQueue.main)
             .sink { _ in } receiveValue: { success in
-                // TODO
+                // TODO: Show alert
                 log(success)
             }
             .store(in: &cancellables)

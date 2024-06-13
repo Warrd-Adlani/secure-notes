@@ -38,9 +38,6 @@ struct NoteView<ViewModel: NoteViewModelProtocol>: NoteViewProtocol {
             Alert(title: Text(viewModel.alert?.alert?.title ?? ""))
         })
         .padding()
-        .onAppear {
-            viewModel.onAppear()
-        }
         .toolbar(content: {
             HStack {
                 Button {
@@ -48,6 +45,7 @@ struct NoteView<ViewModel: NoteViewModelProtocol>: NoteViewProtocol {
                 } label: {
                     Text("Delete note")
                 }
+                .disabled(viewModel.deleteEnabled)
                 
                 Spacer()
                 
@@ -58,6 +56,16 @@ struct NoteView<ViewModel: NoteViewModelProtocol>: NoteViewProtocol {
                 }
             }
         })
+        .onAppear {
+            viewModel.set(delegate: self)
+            viewModel.onAppear()
+        }
+    }
+}
+
+extension NoteView: NoteViewModelDelegate {
+    func didDeleteNote() {
+        dismiss.callAsFunction()
     }
 }
 
