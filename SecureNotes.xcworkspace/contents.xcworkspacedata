@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:SecurityKit/SecurityKit.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:UtilityKit/UtilityKit.xcodeproj">
    </FileRef>
    <FileRef

@@ -1,5 +1,5 @@
 //
-//  Security.swift
+//  AuthenticationServices.swift
 //  SecureNotes
 //
 //  Created by Warrd Adlani on 13/06/2024.
@@ -7,18 +7,19 @@
 
 import Foundation
 import LocalAuthentication
-import Combine
 import UtilityKit
+import Combine
 
-final class AuthenticationServices {
-    static var shared = AuthenticationServices()
-    var callback: ((Result<Bool, Error>) -> Void)?
+public final class AuthenticationServices {
+    public static var shared = AuthenticationServices()
+    public var callback: ((Result<Bool, Error>) -> Void)?
     
     @Published private (set) var isUnlocked = false
+    private (set) var authPublisher = PassthroughSubject<Bool, Error>()
     
     private init() {}
     
-    func authenticate() {
+    public func authenticate() {
         let context = LAContext()
         var error: NSError?
         
@@ -27,7 +28,6 @@ final class AuthenticationServices {
             context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: reason) { [weak self] success, error in
                 DispatchQueue.main.async {
                     if success {
-                        self?.isUnlocked = true
                         self?.callback?(.success(true))
                     } else if let error = error {
                         self?.callback?(.failure(error))

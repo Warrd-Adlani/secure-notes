@@ -34,7 +34,8 @@
 		F3F1BE9B2C19DB4100381E03 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BE9A2C19DB4100381E03 /* SplashScreenView.swift */; };
 		F3F1BEB32C19E4C500381E03 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BEB22C19E4C500381E03 /* SignInView.swift */; };
 		F3F1BF0A2C1A3E0C00381E03 /* NoteListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BF092C1A3E0C00381E03 /* NoteListViewCell.swift */; };
-		F3F1BF102C1B1D3100381E03 /* Security.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F1BF0F2C1B1D3100381E03 /* Security.swift */; };
+		F3F1BF382C1B29F000381E03 /* SecurityKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3F1BF372C1B29F000381E03 /* SecurityKit.framework */; };
+		F3F1BF392C1B29F000381E03 /* SecurityKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F3F1BF372C1B29F000381E03 /* SecurityKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 				F3F1BE412C19031C00381E03 /* DomainKit.framework in Embed Frameworks */,
 				F3F1BE452C19031C00381E03 /* UtilityKit.framework in Embed Frameworks */,
 				F3F1BE432C19031C00381E03 /* PresentationKit.framework in Embed Frameworks */,
+				F3F1BF392C1B29F000381E03 /* SecurityKit.framework in Embed Frameworks */,
 				F3F1BDC82C19027200381E03 /* UtilityKit.framework in Embed Frameworks */,
 				F3F1BE3F2C19031C00381E03 /* DataKit.framework in Embed Frameworks */,
 			);
@@ -98,7 +100,7 @@
 		F3F1BE9A2C19DB4100381E03 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		F3F1BEB22C19E4C500381E03 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		F3F1BF092C1A3E0C00381E03 /* NoteListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListViewCell.swift; sourceTree = "<group>"; };
-		F3F1BF0F2C1B1D3100381E03 /* Security.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Security.swift; sourceTree = "<group>"; };
+		F3F1BF372C1B29F000381E03 /* SecurityKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SecurityKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				F3F1BE402C19031C00381E03 /* DomainKit.framework in Frameworks */,
 				F3F1BE442C19031C00381E03 /* UtilityKit.framework in Frameworks */,
 				F3F1BE422C19031C00381E03 /* PresentationKit.framework in Frameworks */,
+				F3F1BF382C1B29F000381E03 /* SecurityKit.framework in Frameworks */,
 				F3F1BDC72C19027200381E03 /* UtilityKit.framework in Frameworks */,
 				F3F1BE3E2C19031C00381E03 /* DataKit.framework in Frameworks */,
 			);
@@ -157,7 +160,6 @@
 			children = (
 				F3F1BE5B2C19045C00381E03 /* AppState.swift */,
 				F3F1BD702C19022800381E03 /* SecureNotesApp.swift */,
-				F3F1BF0F2C1B1D3100381E03 /* Security.swift */,
 				F3F1BD722C19022800381E03 /* ContentView.swift */,
 				F3F1BEB62C19E5F400381E03 /* SplashScreenView */,
 				F3F1BEB72C19E60200381E03 /* SignInView */,
@@ -197,6 +199,7 @@
 		F3F1BDC52C19027200381E03 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F3F1BF372C1B29F000381E03 /* SecurityKit.framework */,
 				F3F1BE3A2C19031C00381E03 /* DataKit.framework */,
 				F3F1BE3B2C19031C00381E03 /* DomainKit.framework */,
 				F3F1BE3C2C19031C00381E03 /* PresentationKit.framework */,
@@ -376,7 +379,6 @@
 			files = (
 				F3F1BD732C19022800381E03 /* ContentView.swift in Sources */,
 				F3F1BD712C19022800381E03 /* SecureNotesApp.swift in Sources */,
-				F3F1BF102C1B1D3100381E03 /* Security.swift in Sources */,
 				F3F1BF0A2C1A3E0C00381E03 /* NoteListViewCell.swift in Sources */,
 				F3F1BE522C19036D00381E03 /* NotesListViewModel.swift in Sources */,
 				F3F1BE9B2C19DB4100381E03 /* SplashScreenView.swift in Sources */,

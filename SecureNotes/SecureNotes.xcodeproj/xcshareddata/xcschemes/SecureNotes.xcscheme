@@ -147,6 +147,48 @@
                ReferencedContainer = "container:../ResourceKit/ResourceKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F3F1BE7B2C19DA6E00381E03"
+               BuildableName = "ResourceKit.framework"
+               BlueprintName = "ResourceKit"
+               ReferencedContainer = "container:../ResourceKit/ResourceKit.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F3F1BF1A2C1B299C00381E03"
+               BuildableName = "SecurityKit.framework"
+               BlueprintName = "SecurityKit"
+               ReferencedContainer = "container:../SecurityKit/SecurityKit.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F3F1BF242C1B299D00381E03"
+               BuildableName = "SecurityKitTests.xctest"
+               BlueprintName = "SecurityKitTests"
+               ReferencedContainer = "container:../SecurityKit/SecurityKit.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction

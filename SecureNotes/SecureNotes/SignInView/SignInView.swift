@@ -7,6 +7,7 @@
 
 import SwiftUI
 import PresentationKit
+import SecurityKit
 
 protocol SignInViewProtocol: View {}
 
@@ -26,7 +27,7 @@ struct SignInView: SignInViewProtocol {
             Button {                
                 AuthenticationServices.shared.authenticate()
             } label: {
-                Text("Tap to sign in with Face ID")
+                Text("Open notes")
             }
             .buttonStyle(.bordered)
             .tint(.mint)
