@@ -53,3 +53,5 @@ Manages authentication and security features like FaceID.
 ### Testing:
 Unit tests are written for business logic and view model operations to ensure the correctness of CRUD operations and data flow.
 Tests ensure that the view models interact correctly with the data services and handle data operations as expected.
+
+I added a new test suit to test all the modules and their code with one test run.
