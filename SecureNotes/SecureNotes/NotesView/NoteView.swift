@@ -51,40 +51,31 @@ struct NoteView<ViewModel: NoteViewModelProtocol>: NoteViewProtocol {
                   secondaryButton: .cancel())
         }
         .toolbar(content: {
-            noteToolBarView()
+            ToolbarItemGroup(placement: .topBarLeading) {
+                Button {
+                    viewModel.close()
+                } label: {
+                    Text("Close")
+                }
+                
+                Button {
+                    viewModel.deleteNote(showWarning: true)
+                } label: {
+                    Text("Delete note")
+                }
+                .disabled(viewModel.deleteEnabled)
+                
+                Button {
+                    viewModel.saveNote()
+                } label: {
+                    Text("Save note")
+                }
+            }
         })
         .onAppear {
             viewModel.onAppear()
         }
     }
-    
-    fileprivate func noteToolBarView() -> HStack<TupleView<(Button<Text>, Spacer, some View, Spacer, Button<Text>)>> {
-        return HStack {
-            Button {
-                viewModel.close()
-            } label: {
-                Text("Close")
-            }
-            
-            Spacer()
-            
-            Button {
-                viewModel.deleteNote(showWarning: true)
-            } label: {
-                Text("Delete note")
-            }
-            .disabled(viewModel.deleteEnabled)
-            
-            Spacer()
-            
-            Button {
-                viewModel.saveNote()
-            } label: {
-                Text("Save note")
-            }
-        }
-    }
-    
     
     fileprivate func noteToastView() -> VStack<TupleView<(Spacer, some View)>> {
         return VStack {
