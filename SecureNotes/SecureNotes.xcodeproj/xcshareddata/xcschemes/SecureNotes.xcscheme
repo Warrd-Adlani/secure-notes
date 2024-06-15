@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
    LastUpgradeVersion = "1540"
-   version = "2.2">
+   version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES"
@@ -85,34 +85,6 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F3F1BE7B2C19DA6E00381E03"
-               BuildableName = "ResourceKit.framework"
-               BlueprintName = "ResourceKit"
-               ReferencedContainer = "container:../ResourceKit/ResourceKit.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F3F1BF1A2C1B299C00381E03"
-               BuildableName = "SecurityKit.framework"
-               BlueprintName = "SecurityKit"
-               ReferencedContainer = "container:../SecurityKit/SecurityKit.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
                BlueprintIdentifier = "F3F1BE272C1902F800381E03"
                BuildableName = "PresentationKitTests.xctest"
                BlueprintName = "PresentationKitTests"
@@ -183,9 +155,23 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F3F1BF242C1B299D00381E03"
-               BuildableName = "SecurityKitTests.xctest"
-               BlueprintName = "SecurityKitTests"
+               BlueprintIdentifier = "F3F1BE7B2C19DA6E00381E03"
+               BuildableName = "ResourceKit.framework"
+               BlueprintName = "ResourceKit"
+               ReferencedContainer = "container:../ResourceKit/ResourceKit.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F3F1BF1A2C1B299C00381E03"
+               BuildableName = "SecurityKit.framework"
+               BlueprintName = "SecurityKit"
                ReferencedContainer = "container:../SecurityKit/SecurityKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -197,20 +183,11 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F3F1BD812C19022A00381E03"
-               BuildableName = "SecureNotesTests.xctest"
-               BlueprintName = "SecureNotesTests"
-               ReferencedContainer = "container:SecureNotes.xcodeproj">
+               BlueprintIdentifier = "F3F1BF242C1B299D00381E03"
+               BuildableName = "SecurityKitTests.xctest"
+               BlueprintName = "SecurityKitTests"
+               ReferencedContainer = "container:../SecurityKit/SecurityKit.xcodeproj">
             </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "NO"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "NO">
-            <AutocreatedTestPlanReference>
-            </AutocreatedTestPlanReference>
          </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
@@ -218,13 +195,8 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
-      <TestPlans>
-         <TestPlanReference
-            reference = "container:SecureNotes/NotesTestSuit.xctestplan"
-            default = "YES">
-         </TestPlanReference>
-      </TestPlans>
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      shouldAutocreateTestPlan = "YES">
       <Testables>
          <TestableReference
             skipped = "NO"
